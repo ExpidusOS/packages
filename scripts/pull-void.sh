@@ -6,12 +6,12 @@ rm -rf "$basedir"
 
 cd "$srcdir"
 
-if git rev-parse --verify merging; then
+if git branch | grep "origin/merging" >/dev/null; then
 	echo ">> Removing stale branch"
 	git branch -d merging
 fi
 
-if ! git remote | grep voidpackages; then
+if ! git remote | grep voidpackages >/dev/null; then
 	echo ">> Adding remote voidpackages"
 	git remote add voidpackages https://github.com/void-linux/void-packages
 fi
