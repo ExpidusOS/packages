@@ -1,3 +1,0 @@
-#!/bin/sh
-[ -r ./conf ] && . ./conf
-exec deluged -d -U deluge -g deluge ${OPTS} 2>&1

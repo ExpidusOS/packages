@@ -1,3 +1,0 @@
-#!/bin/sh
-[ -s conf ] && . ./conf
-exec ldm ${OPTS:=-u nobody}

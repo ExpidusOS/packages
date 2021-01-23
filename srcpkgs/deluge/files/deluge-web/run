@@ -1,3 +1,0 @@
-#!/bin/sh
-sv check deluged >/dev/null || exit 1
-exec chpst -u deluge:deluge deluge-web -d 2>&1

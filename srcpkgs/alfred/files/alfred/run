@@ -1,3 +1,0 @@
-#!/bin/sh
-[ -r conf ] && . ./conf
-exec alfred ${OPTS:=-i "bat0" -b "bat0"}

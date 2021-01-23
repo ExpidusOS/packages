@@ -1,4 +1,0 @@
-#!/bin/sh
-[ -r conf ] && . ./conf
-mkdir -p /run/kea
-exec kea-dhcp-ddns ${OPTS:=-c /etc/kea/kea.conf}

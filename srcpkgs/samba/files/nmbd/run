@@ -1,6 +1,0 @@
-#!/bin/sh
-
-mkdir -p /run/samba
-mkdir -p /run/lock/samba
-
-exec nmbd -F -S
