@@ -1,2 +1,0 @@
-#!/bin/sh
-exec xdm -error /dev/stdout -nodaemon 2>&1

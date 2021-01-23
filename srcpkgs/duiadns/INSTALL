@@ -1,8 +1,0 @@
-# INSTALL
-case "$ACTION" in
-post)
-	if [ "$UPDATE" != "yes" ]; then
-		chown _duiadns:_duiadns etc/duiadns.conf
-	fi
-	;;
-esac

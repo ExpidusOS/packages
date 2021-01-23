@@ -1,2 +1,0 @@
-#!/bin/sh
-exec chpst -u _dkim:_dkim dkimproxy.out --conf_file=/etc/dkimproxy_out.conf 2>&1

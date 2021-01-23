@@ -1,2 +1,0 @@
-site='https://nixos.org/releases/nix/'
-pattern='nix-\K[\d.]+'

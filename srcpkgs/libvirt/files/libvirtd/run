@@ -1,4 +1,0 @@
-#!/bin/sh
-sv check dbus >/dev/null || exit 1
-[ -f ./conf ] && . ./conf
-exec libvirtd $OPTS 2>&1

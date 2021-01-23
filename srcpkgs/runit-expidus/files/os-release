@@ -1,0 +1,7 @@
+ID=expidus
+ID_LIKE=void
+NAME="ExpidusOS"
+PRETTY_NAME="ExpidusOS Willamette"
+VERSION="Willamette 0.1.0-prealpha"
+VERSION_ID="0.1.0-prealpha"
+HOME_URL="http://expidusos.com"

@@ -1,3 +1,0 @@
-#!/bin/sh
-[ -r ./conf ] && . ./conf
-exec chpst -U _dqcache -e /etc/dqcache/env dqcache 2>&1
