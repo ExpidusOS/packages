@@ -34,4 +34,5 @@ done
 git add -A
 git commit -a -m "Merged Void Linux packages (automated)"
 git checkout master
-git branch -d merging
+git merge origin/merging
+git branch -d origin/merging
