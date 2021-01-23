@@ -19,14 +19,15 @@ fi
 git checkout master
 masterpkglist=($(ls -d srcpkgs/*))
 
-git fetch voidpackages
+git fetch --all
 git checkout -b origin/merging voidpackages/master
 
 for dir in srcpkgs/*; do
 	pkgname=$(basename "$dir")
 	if ! echo "${masterpkglist[@]}" | grep "$pkgname" >/dev/null; then
-		echo ">> Removing unneeded package $pkgname"
 		rm -rf "$dir"
+	else
+		echo ">> Keeping package $pkgname"
 	fi
 done
 
