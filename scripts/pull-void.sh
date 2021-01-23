@@ -11,6 +11,11 @@ if git rev-parse --verify merging; then
 	git branch -d merging
 fi
 
+if ! git remote | grep voidpackages; then
+	echo ">> Adding remote voidpackages"
+	git remote add voidpackages https://github.com/void-linux/void-packages
+fi
+
 git checkout -b master
 masterpkglist=($(ls -d srcpkgs/*))
 
