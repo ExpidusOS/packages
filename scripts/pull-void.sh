@@ -8,7 +8,7 @@ cd "$srcdir"
 
 if git branch | grep "origin/merging" >/dev/null; then
 	echo ">> Removing stale branch"
-	git branch -d merging
+	git branch -D origin/merging
 fi
 
 if ! git remote | grep voidpackages >/dev/null; then
