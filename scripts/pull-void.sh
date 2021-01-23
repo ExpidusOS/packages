@@ -16,10 +16,9 @@ if ! git remote | grep voidpackages; then
 	git remote add voidpackages https://github.com/void-linux/void-packages
 fi
 
-git checkout -b master
+git checkout master
 masterpkglist=($(ls -d srcpkgs/*))
 
-git checkout -b merging
 git fetch voidpackages
 git checkout -b origin/merging voidpackages/master
 
@@ -33,5 +32,5 @@ done
 
 git add -A
 git commit -a -m "Merged Void Linux packages (automated)"
-git checkout -b master
+git checkout master
 git branch -d merging
