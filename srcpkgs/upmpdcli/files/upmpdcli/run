@@ -1,3 +1,0 @@
-#!/bin/sh
-[ -r conf ] && . ./conf
-exec chpst -u _upmpdcli upmpdcli ${OPTS:- -c /etc/upmpdcli.conf} 2>&1
