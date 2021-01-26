@@ -34,5 +34,8 @@ done
 git add -A
 git commit -a -m "Merged Void Linux packages (automated)"
 git checkout master
-git merge origin/merging
+if ! git merge origin/merging; then
+	git status | grep "added by us:" | cut -f2 -d ':' | xargs git add
+	git status | grep "deleted by us:" | cut -f2 -d ':' | xargs git rm
+fi
 git branch -d origin/merging
