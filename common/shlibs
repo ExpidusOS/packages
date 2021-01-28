@@ -17,36 +17,36 @@
 # one (order top->bottom) is preferred over the next ones.
 #
 libc.so musl-1.1.21_1
-libc.so.6 glibc-2.29_1
-libm.so.6 glibc-2.29_1
-libpthread.so.0 glibc-2.29_1
-librt.so.1 glibc-2.29_1
-libdl.so.2 glibc-2.29_1
-ld-linux-x86-64.so.2 glibc-2.29_1 x86_64
-ld-linux.so.2 glibc-2.29_1 i686
-ld-linux.so.3 glibc-2.29_1 armv5tel
-ld-linux-aarch64.so.1 glibc-2.29_1 aarch64
-ld64.so.2 glibc-2.29_1 ppc64
-ld.so.1 glibc-2.29_1 mips
-ld.so.1 glibc-2.29_1 ppc
-ld-linux-armhf.so.3 glibc-2.29_1
-libresolv.so.2 glibc-2.29_1
-libanl.so.1 glibc-2.29_1
-libthread_db.so.1 glibc-2.29_1
-libutil.so.1 glibc-2.29_1
-libnsl.so.1 glibc-2.29_1
-libnss_db.so.2 glibc-2.29_1
-libnss_files.so.2 glibc-2.29_1
-libnss_compat.so.2 glibc-2.29_1
-libnss_dns.so.2 glibc-2.29_1
-libnss_hesiod.so.2 glibc-2.29_1
-libcrypt.so.1 glibc-2.29_1
-libBrokenLocale.so.1 glibc-2.29_1
-libmemusage.so glibc-2.29_1
-libSegFault.so glibc-2.29_1
-libpcprofile.so glibc-2.29_1
-libcidn.so.1 glibc-2.29_1
-libmvec.so.1 glibc-2.29_1
+libc.so.6 glibc-2.32_1
+libm.so.6 glibc-2.32_1
+libpthread.so.0 glibc-2.32_1
+librt.so.1 glibc-2.32_1
+libdl.so.2 glibc-2.32_1
+ld-linux-x86-64.so.2 glibc-2.32_1 x86_64
+ld-linux.so.2 glibc-2.32_1 i686
+ld-linux.so.3 glibc-2.32_1 armv5tel
+ld-linux-aarch64.so.1 glibc-2.32_1 aarch64
+ld64.so.2 glibc-2.32_1 ppc64
+ld.so.1 glibc-2.32_1 mips
+ld.so.1 glibc-2.32_1 ppc
+ld-linux-armhf.so.3 glibc-2.32_1
+libresolv.so.2 glibc-2.32_1
+libanl.so.1 glibc-2.32_1
+libthread_db.so.1 glibc-2.32_1
+libutil.so.1 glibc-2.32_1
+libnsl.so.1 glibc-2.32_1
+libnss_db.so.2 glibc-2.32_1
+libnss_files.so.2 glibc-2.32_1
+libnss_compat.so.2 glibc-2.32_1
+libnss_dns.so.2 glibc-2.32_1
+libnss_hesiod.so.2 glibc-2.32_1
+libcrypt.so.1 glibc-2.32_1
+libBrokenLocale.so.1 glibc-2.32_1
+libmemusage.so glibc-2.32_1
+libSegFault.so glibc-2.32_1
+libpcprofile.so glibc-2.32_1
+libcidn.so.1 glibc-2.32_1
+libmvec.so.1 glibc-2.32_1
 libz.so.1 zlib-1.2.3_1
 libbz2.so.1 bzip2-1.0.5_1
 libarchive.so.13 libarchive-3.3.3_5
@@ -863,7 +863,6 @@ libquadmath.so.0 libquadmath-4.4.0_1
 libgfortran.so.5 libgfortran-8.2.0_1
 libgnarl-10.so libada-10.2.0_1
 libgnat-10.so libada-10.2.0_1
-libmozjs185.so.1.0 js-1.8.5_1
 libwebp.so.7 libwebp-0.6.0_1
 libwebpmux.so.3 libwebp-0.6.0_1
 libwebpdemux.so.2 libwebp-0.5.0_1
@@ -1678,11 +1677,7 @@ libosmoctrl.so.0 libosmocore-0.7.0_1
 libgtkglext-x11-1.0.so.0 gtkglext-1.2.0_4
 libgdkglext-x11-1.0.so.0 gtkglext-1.2.0_4
 libXaw3d.so.8 libXaw3d-1.6.2_1
-libshiboken-python2.7.so.1.2 libshiboken-python-1.2.2_2
-libshiboken-python3.6.so.1.2 libshiboken-python3-1.2.2_4
 libshiboken2.so.5.15 libshiboken2-5.15.0_1
-libpyside-python2.7.so.1.2 libpyside-python-1.2.2_2
-libpyside-python3.6.so.1.2 libpyside-python3-1.2.2_6
 libpyside2.so.5.15 libpyside2-python3-5.15.0_1
 libupsclient.so.4 libnetwork-ups-tools-2.7.2_1
 libnutclient.so.0 libnetwork-ups-tools-2.7.2_1
@@ -3043,6 +3038,7 @@ libPocoEncodings.so.64 poco-1.9.4_1
 libPocoNetSSL.so.64 poco-1.9.4_1
 libPocoCrypto.so.64 poco-1.9.4_1
 libopenblas.so.0 openblas-0.2.19_1
+librtaudio.so.6 rtaudio-5.1.0_1
 librtmidi.so.5 rtmidi-4.0.0_1
 libbiblesync.so.2.1.0 biblesync-2.1.0_1
 libbac-9.4.2.so bacula-common-9.4.2_1
@@ -3520,7 +3516,6 @@ libmysqlpp.so.3 mysql++-3.2.5_1
 libKF5Syndication.so.5 syndication-5.50.0_1
 liblqr-1.so.0 liblqr-0.4.2_1
 libmozjs-60.so.0 mozjs60-60.0.2_1
-libmozjs-68.so.0 mozjs68-68.8.0_1
 libmozjs-78.so.0 mozjs78-78.1.0_1
 libebur128.so.1 libebur128-1.2.4_1
 libgtksourceview-4.so.0 gtksourceview4-4.0.2_1
