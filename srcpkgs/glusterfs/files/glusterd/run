@@ -1,2 +1,0 @@
-#!/bin/sh
-exec glusterd -N 2>&1

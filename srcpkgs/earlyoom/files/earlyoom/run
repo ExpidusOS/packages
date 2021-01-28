@@ -1,3 +1,0 @@
-#!/bin/sh
-[ -r conf ] && . ./conf
-exec earlyoom ${OPTS} 2>&1 >/dev/null
