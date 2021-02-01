@@ -1,2 +1,0 @@
-#!/bin/sh
-exec ardor-tor > /dev/null

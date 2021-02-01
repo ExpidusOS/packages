@@ -1,2 +1,0 @@
-#!/bin/sh
-/usr/lib/gnunet/libexec/gnunet-service-arm -c /etc/gnunet/gnunet.conf
