@@ -2244,9 +2244,6 @@ libgedacairo.so.1 geda-1.10.2_1
 libxornstorage.so.0 geda-1.10.2_1
 libclutter-gst-3.0.so.0 clutter-gst3-3.0.4_1
 libgsound.so.0 gsound-1.0.1_1
-libgegl-0.3.so.0 gegl3-0.3.0_1
-libgegl-npd-0.3.so gegl3-0.3.0_1
-libgegl-sc-0.3.so gegl3-0.3.0_1
 libprocps.so.8 procps-ng-3.3.16_1
 libgegl-0.4.so.0 gegl-0.4.16_1
 libgegl-npd-0.4.so gegl-0.4.16_1
@@ -2303,7 +2300,7 @@ libgnunettransport.so.2 gnunet-0.12.2_1
 libgnunettransportapplication.so.0 gnunet-0.12.2_1
 libgnunettransportcore.so.0 gnunet-0.12.2_1
 libgnunettransportcommunicator.so.0 gnunet-0.12.2_1
-libskarnet.so.2.9 skalibs-2.9.0.0_1
+libskarnet.so.2.10 skalibs-2.10.0.1_1
 libKF5BalooWidgets.so.5 baloo-widgets5-17.04.3_1
 libtidy.so.5 libtidy5-5.1.25_1
 libSDL2_gfx-1.0.so.0 SDL2_gfx-1.0.1_1
@@ -3454,8 +3451,8 @@ libmedC.so.11 libmed-4.0.0_1
 libmed.so.11 libmed-4.0.0_1
 libeog.so eog-3.28.0_4
 libfreexl.so.1 freexl-1.0.5_1
-libgeos-3.7.0.so geos-3.7.0_1
-libgeos_c.so.1 geos-3.6.2_1
+libgeos-3.9.0.so geos-3.9.0_1
+libgeos_c.so.1 geos-3.9.0_1
 libpapi.so.5 papi-5.6.0_1
 libpfm.so.4 papi-5.6.0_1
 libfifechan.so.0.1.5 fifechan-0.1.5_1
@@ -3464,8 +3461,6 @@ libfifechan_opengl.so.0.1.5 fifechan-0.1.5_1
 libpolyclipping.so.22 clipper-6.4.2_1
 libSoapySDR.so.0.7 SoapySDR-0.7.0_1
 libeditorconfig.so.0 editorconfig-0.12.2_1
-libkid3-core.so.3.8.4 kid3-3.8.4_1
-libkid3-gui.so.3.8.4 kid3-3.8.4_1
 libcfitsio.so.9 cfitsio-3.480_1
 libapparmor.so.1 libapparmor-2.12.0_1
 libplacebo.so.72 libplacebo-2.72.0_1
