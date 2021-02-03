@@ -1,7 +1,7 @@
 # Template file for 'xmlcatmgr'
 pkgname=xmlcatmgr
 version=2.2
-revision=4
+revision=1
 build_style=gnu-configure
 conf_files="
 	/etc/sgml/catalog

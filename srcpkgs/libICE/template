@@ -1,7 +1,7 @@
 # Template file for 'libICE'
 pkgname=libICE
 version=1.0.10
-revision=2
+revision=1
 build_style=gnu-configure
 hostmakedepends="automake libtool pkg-config xorg-util-macros xtrans"
 makedepends="xtrans xorgproto"

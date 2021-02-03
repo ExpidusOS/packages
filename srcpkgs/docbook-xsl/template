@@ -2,7 +2,7 @@
 pkgname=docbook-xsl
 # keep in sync with docbook-xsl-ns
 version=1.79.2
-revision=2
+revision=1
 # at v1.79.2, docbook-xsl was renamed to docbook-xsl-nons
 wrksrc="${pkgname}-nons-${version}"
 depends="xmlcatmgr docbook-xml>=4.2"

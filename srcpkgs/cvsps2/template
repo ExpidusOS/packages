@@ -1,7 +1,7 @@
 # Template file for 'cvsps2'
 pkgname=cvsps2
 version=2.1
-revision=4
+revision=1
 wrksrc=cvsps-${version}
 build_style=gnu-makefile
 makedepends="zlib-devel"

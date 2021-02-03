@@ -1,7 +1,7 @@
 # Template file for 'gtk+'
 pkgname=gtk+
 version=2.24.32
-revision=4
+revision=1
 build_style=gnu-configure
 build_helper="gir"
 configure_args="--enable-man $(vopt_enable cups) --with-xinput $(vopt_enable gir introspection)"

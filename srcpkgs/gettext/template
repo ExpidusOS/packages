@@ -1,7 +1,7 @@
 # Template file for 'gettext'
 pkgname=gettext
 version=0.21
-revision=2
+revision=1
 build_style=gnu-configure
 configure_args="--disable-java --disable-native-java --disable-csharp
  --disable-libasprintf --enable-threads=posix --disable-rpath --without-emacs

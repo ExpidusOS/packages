@@ -1,14 +1,13 @@
 # Template file for 'zbar'
 pkgname=zbar
 version=0.23.1
-revision=2
+revision=1
 build_style=gnu-configure
 build_helper=gir
-configure_args="$(vopt_with qt) --with-gir --with-python=python3"
-hostmakedepends="pkg-config python3 glib-devel
- $(vopt_if qt 'qt5-qmake qt5-host-tools')"
+configure_args="--with-gir --with-python=python3"
+hostmakedepends="pkg-config python3 glib-devel"
 makedepends="libmagick-devel libXv-devel python3-devel v4l-utils-devel
- gtk+3-devel $(vopt_if qt qt5-x11extras-devel)"
+ gtk+3-devel"
 depends="libzbar-${version}_${revision}"
 short_desc="Barcode reading library and application"
 maintainer="Jürgen Buchmüller <pullmoll@t-online.de>"
@@ -17,20 +16,10 @@ homepage="https://git.linuxtv.org/zbar.git/"
 distfiles="https://linuxtv.org/downloads/zbar/${pkgname}-${version}.tar.bz2"
 checksum=dad260b47ef887a639e840a89e5e6e132217b6bba2a8473565d1f459bcb97c1f
 
-build_options="qt"
-case "$XBPS_TARGET_MACHINE" in
-	mips*)	;; # don't enable qt as it can't be built for mips*
-	*) build_options_default="qt" ;;
-esac
-
 export PYTHON_CFLAGS="-I$XBPS_CROSS_BASE/usr/include/python$py3_ver"
 CFLAGS="-DNDEBUG"
 
 subpackages="libzbar libzbar-devel"
-
-if [ "$build_option_qt" ]; then
-	subpackages+=" zbar-qt libzbar-qt"
-fi
 
 post_extract() {
 	# 0.23.1 doesn't ship this file, corrected in master
@@ -63,22 +52,6 @@ libzbar_package() {
 		vmove "usr/lib/libzbargtk.so.*"
 		vmove "$py3_lib"
 		vmove "usr/lib/girepository-1.0"
-	}
-}
-
-zbar-qt_package() {
-	short_desc+=" - Qt frontend"
-	pkg_install() {
-		vmove "usr/bin/*-qt"
-	}
-}
-
-
-libzbar-qt_package() {
-	conflicts="libzbar<0.10_10"
-	short_desc+=" - Qt bindings"
-	pkg_install() {
-		vmove "usr/lib/libzbarqt.so.*"
 	}
 }
 

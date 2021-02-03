@@ -2,7 +2,7 @@
 pkgname=libexpidus1util
 wrksrc="libexpidus1util-master"
 version=0.1.0
-revision=2
+revision=1
 build_style=gnu-configure
 build_helper="gir"
 configure_args="--with-locales-dir=/usr/share/locale"

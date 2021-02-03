@@ -1,7 +1,7 @@
 # Template build file for 'libxkbui'.
 pkgname=libxkbui
 version=1.0.2
-revision=8
+revision=1
 build_style=gnu-configure
 hostmakedepends="pkg-config"
 makedepends="xorgproto libXt-devel libxkbfile-devel"

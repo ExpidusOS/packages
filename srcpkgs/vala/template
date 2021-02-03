@@ -2,7 +2,7 @@
 pkgname=vala
 # Should be kept in sync with 'valadoc' (shared distfiles)
 version=0.50.0
-revision=2
+revision=1
 build_style=gnu-configure
 configure_args="--disable-valadoc"
 hostmakedepends="flex libxslt pkg-config"

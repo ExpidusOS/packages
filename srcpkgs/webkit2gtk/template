@@ -2,7 +2,7 @@
 # ping q66 before touching this
 pkgname=webkit2gtk
 version=2.30.4
-revision=5
+revision=1
 wrksrc="webkitgtk-${version}"
 build_style=cmake
 build_helper="gir"
@@ -45,7 +45,7 @@ distfiles="${homepage}/releases/webkitgtk-${version}.tar.xz"
 checksum=d595a37c5001ff787266b155e303a5f2e5b48a6d466f2714c2f30c11392f7b24
 
 build_options="gir wayland x11 bubblewrap jit sampling_profiler minibrowser"
-build_options_default="gir wayland x11 bubblewrap minibrowser"
+build_options_default="wayland x11 bubblewrap minibrowser"
 
 desc_option_bubblewrap="Enable bubblewrap sandbox"
 desc_option_jit="JavaScript JIT (Only some architectures)"

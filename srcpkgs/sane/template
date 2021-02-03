@@ -2,7 +2,7 @@
 pkgname=sane
 _gitlab_release_hash=8bf1cae2e1803aefab9e5331550e5d5d
 version=1.0.31
-revision=2
+revision=1
 wrksrc="sane-backends-${version}"
 build_style=gnu-configure
 configure_args="--disable-locking --enable-ipv6 --enable-pthread

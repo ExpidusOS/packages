@@ -1,7 +1,7 @@
 # Template file for 'avahi'
 pkgname=avahi
 version=0.8
-revision=2
+revision=1
 build_style=gnu-configure
 configure_args="--disable-qt3 --disable-qt4 --disable-qt5
  --disable-libevent --disable-mono --disable-monodoc
