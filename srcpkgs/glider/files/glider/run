@@ -1,2 +1,0 @@
-#!/bin/sh
-exec chpst -u nobody:nogroup glider -config /etc/glider/config
