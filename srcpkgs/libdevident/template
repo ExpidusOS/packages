@@ -1,0 +1,24 @@
+# Template file for 'libdevident'
+pkgname=libdevident
+version=0.1.0
+revision=1
+build_style=meson
+wrksrc="libdevident-master"
+depends="glib"
+makedepends="glib-devel"
+hostmakedepends="pkg-config"
+short_desc="A device identification library"
+maintainer="Tristan Ross <rosscomputerguy@protonmail.com>"
+license="GPL-3.0-only"
+homepage="http://expidusos.com"
+distfiles="https://github.com/ExpidusOS/libdevident/archive/master.tar.gz"
+checksum=7d3e8b6611bcb350aa6453c0c554f5e298a4dd6f7ea5493f2bab46bedcc7cd3a
+
+libdevident-devel_package() {
+	depends="${makedepends} ${sourcepkg}>=${version}_${revision}"
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove usr/include
+		vmove usr/lib/pkgconfig
+	}
+}

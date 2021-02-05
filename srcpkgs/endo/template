@@ -1,0 +1,39 @@
+# Template file for 'endo'
+pkgname=endo
+version=0.1.0
+revision=1
+build_style=gnu-configure
+wrksrc="endo-master"
+configure_args="--disable-static --with-locales-dir=/usr/share/locale"
+hostmakedepends="xfce4-dev-tools pkg-config intltool gettext-devel glib-devel"
+makedepends="gtk+-devel libexpidus1ui-devel"
+depends="papirus-icon-theme desktop-file-utils"
+short_desc="Extension library for ExpidusOS Shell"
+maintainer="Orphaned <orphan@voidlinux.org>"
+license="GPL-2.0-or-later, LGPL-2.1-or-later"
+homepage="https://xfce.org/"
+distfiles="https://github.com/ExpidusOS/endo/archive/master.tar.gz"
+checksum=d46254030998632172d45072b6ce461b7563e215a34073c891877bfc1577e140
+
+pre_configure() {
+	if [ "$CROSS_BUILD" ]; then
+		# Disable tests:
+		sed -i 's/^\([[:blank:]]*po\).*$/\1/;/^[[:blank:]]*tests$/d' Makefile.am
+	fi
+	mkdir m4
+}
+
+do_configure() {
+	./autogen.sh ${configure_args} --enable-gtk-doc
+}
+
+endo-devel_package() {
+	depends="libexpidus1ui-devel endo-${version}_${revision}"
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove usr/include
+		vmove usr/lib/pkgconfig
+		vmove "usr/lib/*.so"
+		vmove "usr/share/*doc"
+	}
+}

@@ -1,0 +1,42 @@
+# Template file for 'expidus1-panel'
+pkgname=expidus1-panel
+version=0.1.0
+revision=1
+build_style=gnu-configure
+build_helper="gir"
+wrksrc="panel-master"
+configure_args="--with-locales-dir=/usr/share/locale
+ --disable-static --enable-gio-unix --enable-gtk3"
+hostmakedepends="xfce4-dev-tools pkg-config intltool gettext-devel glib-devel"
+makedepends="libwnck-devel libexpidus1ui-devel esconf-devel markon-devel endo-devel"
+short_desc="Panels for ExpidusOS Shell"
+maintainer="Tristan Ross <rosscomputerguy@protonmail.com>"
+license="GPL-2.0-or-later"
+homepage="http://expidusos.com"
+distfiles="https://github.com/ExpidusOS/panel/archive/master.tar.gz"
+checksum=fa099bc6be6592dbb828747a473c2e1b0e7f85afd945a98002b475bb6f975991
+
+# Package build options
+build_options="gir"
+build_options_default="gir"
+
+expidus1-panel-devel_package() {
+	depends="libexpidus1ui-devel libexpidus1panel>=${version}_${revision}"
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove usr/include
+		vmove usr/lib/pkgconfig
+		vmove usr/share/gtk-doc
+		vmove "usr/lib/*.so"
+		if [ "$build_option_gir" ]; then
+			vmove usr/share/gir-1.0
+		fi
+	}
+}
+
+libexpidus1panel_package() {
+	short_desc+=" - runtime library"
+	pkg_install() {
+		vmove "usr/lib/*.so.*"
+	}
+}

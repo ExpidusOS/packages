@@ -1,0 +1,21 @@
+# Template file for 'esdesktop'
+pkgname=esdesktop
+version=0.1.0
+revision=1
+build_style=gnu-configure
+wrksrc=esdesktop-master
+configure_args="--with-locales-dir=/usr/share/locale"
+hostmakedepends="pkg-config intltool glib-devel Lunar-devel"
+makedepends="libexpidus1ui-devel endo-devel markon-devel
+ libnotify-devel libwnck-devel"
+depends="papirus-icon-theme desktop-file-utils"
+short_desc="Desktop manager for ExpidusOS Shell"
+maintainer="Tristan Ross <rosscomputerguy@protonmail.com>"
+license="GPL-2.0-or-later"
+homepage="http://expidusos.com"
+distfiles="https://github.com/ExpidusOS/esdesktop/archive/master.tar.gz"
+checksum=934ba5affecff21e62d9fac1dd50c50cd94b3a807fefa5f5bff59f3d6f155bae
+
+do_configure() {
+	./autogen.sh ${configure_args}
+}

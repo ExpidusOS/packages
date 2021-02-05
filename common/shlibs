@@ -318,8 +318,7 @@ libtiffxx.so.5 tiff-4.0.0_1
 libnotify.so.4 libnotify-0.7_1
 libexo-1.so.0 exo-0.7.3_1
 libexo-2.so.0 exo-0.12.0_1
-libendo-1.so.0 exo-0.1.0_1
-libendo-2.so.0 exo-0.1.0_1
+libendo-2.so.0.1.0 endo-0.1.0_1
 libvte.so.9 vte-0.20.1_1
 libglade-2.0.so.0 libglade-2.6.4_1
 libglademm-2.4.so.1 libglademm-2.6.7_1
@@ -4045,3 +4044,4 @@ libwinbind-client-samba4.so samba-libs-4.13.2_1
 libsixel.so.1 libsixel-1.8.6_1
 libpamtest.so.0 pam_wrapper-1.1.3_1
 libopenaptx.so.0 libopenaptx-0.2.0_1
+libdevident.so libdevident-0.1.0_1
