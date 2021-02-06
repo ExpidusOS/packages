@@ -1,0 +1,22 @@
+# Template file for 'expidus1-settings'
+pkgname=expidus1-settings
+version=0.1.0
+revision=1
+build_style=gnu-configure
+configure_args="--with-locales-dir=/usr/share/locale
+ --enable-sound-settings --enable-pluggable-dialogs --enable-xrandr"
+hostmakedepends="intltool pkg-config gettext-devel xfce4-dev-tools"
+makedepends="endo-devel garcon-devel libcanberra-devel libnotify-devel
+ libxklavier-devel upower-devel libXrandr-devel"
+depends="desktop-file-utils papirus-icon-theme"
+conf_files="/etc/xdg/expidus1/esconf/expidus-perchannel-xml/xsettings.xml"
+short_desc="ExpidusOS settings manager"
+maintainer="Tristan Ross <rosscomputerguy@protonmail.com>"
+license="GPL-2.0-only"
+homepage="http://expidusos.com"
+distfiles="https://github.com/ExpidusOS/settings/archive/master.tar.gz"
+checksum=67a1404fc754c675c6431e22a8fe0e5d79644fdfadbfe25a4523d68e1442ddc2
+
+do_configure() {
+	./autogen.sh ${configure_args}
+}

@@ -8,7 +8,7 @@ configure_args="--with-locales-dir=/usr/share/locale"
 hostmakedepends="pkg-config intltool glib-devel Lunar-devel"
 makedepends="libexpidus1ui-devel endo-devel markon-devel
  libnotify-devel libwnck-devel"
-depends="papirus-icon-theme desktop-file-utils"
+depends="hicolor-icon-theme desktop-file-utils"
 short_desc="Desktop manager for ExpidusOS Shell"
 maintainer="Tristan Ross <rosscomputerguy@protonmail.com>"
 license="GPL-2.0-or-later"

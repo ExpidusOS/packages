@@ -1,0 +1,15 @@
+# Template file for 'expidus-inputd'
+pkgname=expidus-inputd
+version=0.1.0
+revision=1
+build_style=meson
+wrksrc="inputd-master"
+depends="glib gtk+3 libinput libdevident"
+makedepends="glib-devel gtk+3-devel libinput-devel libdevident-devel"
+hostmakedepends="pkg-config"
+short_desc="Touchpad and touchscreen input daemon"
+maintainer="Tristan Ross <rosscomputerguy@protonmail.com>"
+license="GPL-3.0-only"
+homepage="http://expidusos.com"
+distfiles="https://github.com/ExpidusOS/inputd/archive/master.tar.gz"
+checksum=7d3e8b6611bcb350aa6453c0c554f5e298a4dd6f7ea5493f2bab46bedcc7cd3a

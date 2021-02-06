@@ -1,0 +1,20 @@
+# Template file for 'expidus1-screenshooter'
+pkgname=expidus1-screenshooter
+version=0.1.0
+revision=1
+build_style=gnu-configure
+wrksrc="screenshooter-master"
+configure_args="--with-locales-dir=/usr/share/locale"
+hostmakedepends="pkg-config intltool glib-devel xfce4-dev-tools gettext-devel"
+makedepends="libexpidus1ui-devel expidus1-panel-devel endo-devel libsoup-devel"
+depends="desktop-file-utils hicolor-icon-theme"
+short_desc="Plugin that makes screenshots for ExpidusOS Shell"
+maintainer="Tristan Ross <rosscomputerguy@protonmail.com>"
+license="GPL-2.0-or-later"
+homepage="http://expidusos.com"
+distfiles="https://github.com/ExpidusOS/screenshooter/archive/master.tar.gz"
+checksum=6f029d614ad3b63fbcf742984dc6c976f3008e7d88fa487d49ed544f56f62c50
+
+do_configure() {
+	./autogen.sh ${configure_args}
+}

@@ -1,0 +1,27 @@
+# Template file for 'expidus1-session'
+pkgname=expidus1-session
+version=0.1.0
+revision=1
+build_style=gnu-configure
+wrksrc="session-master"
+configure_args="--with-locales-dir=/usr/share/locale --disable-static --enable-polkit"
+hostmakedepends="xfce4-dev-tools pkg-config intltool gettext-devel glib-devel iceauth"
+makedepends="libexpidus1ui-devel upower-devel
+ libwnck-devel expidus1-panel-devel libSM-devel polkit-devel"
+depends="iceauth hicolor-icon-theme desktop-file-utils"
+conf_files="/etc/xdg/expidus1/esconf/expidus1-perchannel-xml/expidus1-session.xml"
+short_desc="Session manager for ExpidusOS Shell"
+maintainer="Tristan Ross <rosscomputerguy@protonmail.com>"
+license="GPL-2.0-or-later"
+homepage="http://expidusos.com"
+distfiles="https://github.com/ExpidusOS/session/archive/master.tar.gz"
+checksum=22f273f212481d71e0b5618c62710cd85f69aea74f5ea5c0093f7918b07d17b7
+
+do_configure() {
+	./autogen.sh ${configure_args}
+}
+
+post_install() {
+	# startexpidus1 needs bash.
+	replace_interpreter bash ${DESTDIR}/usr/bin/startexpidus1
+}

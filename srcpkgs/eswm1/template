@@ -9,7 +9,7 @@ hostmakedepends="pkg-config intltool gettext-devel xfce4-dev-tools"
 makedepends="libexpidus1ui-devel startup-notification-devel
  libXcomposite-devel libXdamage-devel libXfixes-devel libXrandr-devel
  libXrender-devel libXpresent-devel libwnck-devel libdevident-devel"
-depends="papirus-icon-theme desktop-file-utils"
+depends="hicolor-icon-theme desktop-file-utils"
 short_desc="Window manager for ExpidusOS"
 maintainer="Tristan Ross <rosscomputerguy@protonmail.com>"
 license="GPL-2.0-or-later"

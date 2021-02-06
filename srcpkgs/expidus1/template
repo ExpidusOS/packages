@@ -1,0 +1,26 @@
+# Template file for 'expidus1'
+pkgname=expidus1
+version=0.1.0
+revision=1
+build_style=meta
+depends="
+	expidus1-panel>=${version}
+	expidus1-session>=${version}
+	expidus1-settings>=${version}
+	esconf>=${version}
+	esdesktop>=${version}
+	eswm1>=${version}
+	expidus1-power-manager>=${version}
+	Lunar>=${version}
+	endo>=${version}
+	expidus1-notifyd>=${version}
+	expidus1-screensaver>=${version}
+	tumbler
+	xdg-user-dirs-gtk
+	expidus-inputd
+	upower
+	elogind"
+short_desc="ExpidusOS Shell meta-package for Void Linux"
+maintainer="Tristan Ross <rosscomputerguy@protonmail.com>"
+license="GPL-2.0-or-later"
+homepage="http://expidusos.com"
