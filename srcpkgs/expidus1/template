@@ -14,7 +14,7 @@ depends="
 	Lunar>=${version}
 	endo>=${version}
 	expidus1-notifyd>=${version}
-	expidus1-screensaver>=${version}
+	tokyo-theme
 	tumbler
 	xdg-user-dirs-gtk
 	expidus-inputd

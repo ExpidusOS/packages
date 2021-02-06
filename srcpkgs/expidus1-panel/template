@@ -14,11 +14,15 @@ maintainer="Tristan Ross <rosscomputerguy@protonmail.com>"
 license="GPL-2.0-or-later"
 homepage="http://expidusos.com"
 distfiles="https://github.com/ExpidusOS/panel/archive/master.tar.gz"
-checksum=fa099bc6be6592dbb828747a473c2e1b0e7f85afd945a98002b475bb6f975991
+checksum=95939f08dbaa6d621ae1bf3d1f9ee8eed7b583ccfcc1e26d454c53d7bb28c0b5
 
 # Package build options
 build_options="gir"
 build_options_default="gir"
+
+do_configure() {
+	./autogen.sh ${configure_args} --enable-gtk-doc
+}
 
 expidus1-panel-devel_package() {
 	depends="libexpidus1ui-devel libexpidus1panel>=${version}_${revision}"

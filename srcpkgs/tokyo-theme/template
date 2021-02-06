@@ -1,0 +1,13 @@
+# Template file for 'tokyo-theme'
+pkgname=tokyo-theme
+version=0.1.0
+revision=1
+wrksrc=tokyo-theme-master
+build_style=meson
+hostmakedepends="sassc"
+short_desc="Default theme for ExpidusOS"
+maintainer="Tristan Ross <rosscomputerguy@protonmail.com>"
+license="GPL-3.0-only"
+homepage="http://expidusos.com"
+distfiles="https://github.com/ExpidusOS/tokyo-theme/archive/master.zip"
+checksum="6dac88eef138f73d0c9ed99cd9cc95c6cac51bbe1faeb39f36f0817adf0ea600"

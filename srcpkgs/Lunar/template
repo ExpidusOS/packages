@@ -8,7 +8,7 @@ build_helper="gir"
 configure_args="--enable-gio-unix --enable-gudev
  --enable-exif --enable-pcre --disable-static --enable-notifications
  --with-locales-dir=/usr/share/locale"
-hostmakedepends="pkg-config intltool glib-devel"
+hostmakedepends="pkg-config intltool glib-devel xfce4-dev-tools gettext-devel"
 makedepends="endo-devel libexif-devel libgudev-devel libnotify-devel expidus1-panel-devel"
 depends="desktop-file-utils hicolor-icon-theme"
 short_desc="Lunar File Manager"
@@ -16,7 +16,11 @@ maintainer="Tristan Ross <rosscomputerguy@protonmail.com>"
 license="GPL-2.0-or-later, LGPL-2.1-or-later"
 homepage="http://expidusos.com"
 distfiles="https://github.com/ExpidusOS/lunar/archive/master.tar.gz"
-checksum=67a90b98c436192f9aa6cd18a22a089e713007864aebfa65f36f121c86ba7add
+checksum=423066ebf659a7b4a603fd4208427264ee0264140fc0ac8afa91d84282f79c01
+
+do_configure() {
+	./autogen.sh ${configure_args} --enable-gtk-doc
+}
 
 post_install() {
 	rm -rf ${DESTDIR}/usr/lib/systemd

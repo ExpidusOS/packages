@@ -5,7 +5,7 @@ revision=1
 build_style=gnu-configure
 wrksrc="power-manager-master"
 configure_args="--with-locales-dir=/usr/share/locale --disable-static"
-hostmakedepends="pkg-config intltool xfce-dev-tools gettext-devel"
+hostmakedepends="pkg-config intltool xfce4-dev-tools gettext-devel"
 makedepends="libexpidus1ui-devel libnotify-devel upower-devel expidus1-panel-devel"
 depends="hicolor-icon-theme desktop-file-utils"
 short_desc="ExpidusOS power manager"
@@ -13,7 +13,7 @@ maintainer="Tristan Ross <rosscomputerguy@protonmail.com>"
 license="GPL-2.0-or-later"
 homepage="http://expidusos.com"
 distfiles="https://github.com/ExpidusOS/power-manager/archive/master.tar.gz"
-checksum=eb9c587c01b502fa45a32e7fc2aba98fa6d8391475133883654f77e562c43bf3
+checksum=62da08b9bcb6c07081db70b562c30424ab9fd88e607398058b2e65ab743ba8ea
 
 do_configure() {
 	./autogen.sh ${configure_args}
