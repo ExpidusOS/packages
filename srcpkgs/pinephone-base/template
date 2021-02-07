@@ -1,0 +1,15 @@
+# Template file for 'pinephone-base'
+pkgname=pinephone-base
+version=0.1
+revision=1
+archs="aarch64*"
+build_style=meta
+depends="pinephone-kernel pinephone-uboot"
+short_desc="PinePhone platform package"
+maintainer="Tristan Ross <rosscomputerguy@protonmail.com>"
+license="Public Domain"
+homepage="http://expidusos.com"
+
+do_install() {
+	vinstall "${FILESDIR}/90-modem-eg25.rules" 644 usr/lib/udev/rules.d
+}

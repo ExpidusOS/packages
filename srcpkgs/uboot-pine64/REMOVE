@@ -1,8 +1,0 @@
-#
-# This will remove the "boot.scr" file
-#
-case "${ACTION}" in
-post)
-	rm -rf /boot/boot.scr
-	;;
-esac
