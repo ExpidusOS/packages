@@ -6,7 +6,7 @@ revision=1
 build_style=gnu-configure
 build_helper="gir"
 configure_args="--with-locales-dir=/usr/share/locale"
-hostmakedepends="pkg-config intltool xfce4-dev-tools"
+hostmakedepends="pkg-config intltool xfce4-dev-tools gettext-devel"
 makedepends="libglib-devel gettext-devel"
 short_desc="Utility library for the ExpidusOS Shell"
 maintainer="Tristan Ross <rosscomputerguy@protonmail.com>"
@@ -20,7 +20,7 @@ build_options="gir"
 build_options_default="gir"
 
 do_configure() {
-	./autogen.sh ${configure_args} --enable-gtk-doc
+	./autogen.sh ${configure_args}
 }
 
 libexpidus1util-devel_package() {
@@ -29,7 +29,6 @@ libexpidus1util-devel_package() {
 	pkg_install() {
 		vmove usr/include
 		vmove usr/lib/pkgconfig
-		vmove usr/share/gtk-doc
 		vmove "usr/lib/*.so"
 		if [ "$build_option_gir" ]; then
 			vmove usr/share/gir-1.0

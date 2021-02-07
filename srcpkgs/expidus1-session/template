@@ -5,7 +5,7 @@ revision=1
 build_style=gnu-configure
 wrksrc="session-master"
 configure_args="--with-locales-dir=/usr/share/locale --disable-static --enable-polkit"
-hostmakedepends="xfce4-dev-tools pkg-config intltool gettext-devel glib-devel iceauth"
+hostmakedepends="xfce4-dev-tools pkg-config intltool gettext-devel glib-devel iceauth gdk-pixbuf-devel"
 makedepends="libexpidus1ui-devel upower-devel
  libwnck-devel expidus1-panel-devel libSM-devel polkit-devel"
 depends="iceauth hicolor-icon-theme desktop-file-utils"

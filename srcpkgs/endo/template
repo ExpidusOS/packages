@@ -11,7 +11,7 @@ depends="hicolor-icon-theme desktop-file-utils"
 short_desc="Extension library for ExpidusOS Shell"
 maintainer="Orphaned <orphan@voidlinux.org>"
 license="GPL-2.0-or-later, LGPL-2.1-or-later"
-homepage="https://xfce.org/"
+homepage="http://expidusos.com"
 distfiles="https://github.com/ExpidusOS/endo/archive/master.tar.gz"
 checksum=d46254030998632172d45072b6ce461b7563e215a34073c891877bfc1577e140
 
@@ -20,11 +20,11 @@ pre_configure() {
 		# Disable tests:
 		sed -i 's/^\([[:blank:]]*po\).*$/\1/;/^[[:blank:]]*tests$/d' Makefile.am
 	fi
-	mkdir m4
+	mkdir -p m4
 }
 
 do_configure() {
-	./autogen.sh ${configure_args} --enable-gtk-doc
+	./autogen.sh ${configure_args}
 }
 
 endo-devel_package() {
@@ -34,6 +34,5 @@ endo-devel_package() {
 		vmove usr/include
 		vmove usr/lib/pkgconfig
 		vmove "usr/lib/*.so"
-		vmove "usr/share/*doc"
 	}
 }

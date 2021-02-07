@@ -19,7 +19,7 @@ distfiles="https://github.com/ExpidusOS/lunar/archive/master.tar.gz"
 checksum=423066ebf659a7b4a603fd4208427264ee0264140fc0ac8afa91d84282f79c01
 
 do_configure() {
-	./autogen.sh ${configure_args} --enable-gtk-doc
+	./autogen.sh ${configure_args}
 }
 
 post_install() {
@@ -34,6 +34,5 @@ Lunar-devel_package() {
 		vmove usr/lib/pkgconfig
 		vmove "usr/lib/*.so"
 		vmove usr/share/gir-1.0
-		vmove usr/share/gtk-doc
 	}
 }

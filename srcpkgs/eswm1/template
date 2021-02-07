@@ -5,7 +5,7 @@ revision=1
 build_style=gnu-configure
 configure_args="--with-locales-dir=/usr/share/locale"
 wrksrc="eswm-master"
-hostmakedepends="pkg-config intltool gettext-devel xfce4-dev-tools"
+hostmakedepends="pkg-config intltool gettext-devel xfce4-dev-tools gdk-pixbuf-devel librsvg"
 makedepends="libexpidus1ui-devel startup-notification-devel
  libXcomposite-devel libXdamage-devel libXfixes-devel libXrandr-devel
  libXrender-devel libXpresent-devel libwnck-devel libdevident-devel"

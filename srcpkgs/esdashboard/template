@@ -6,8 +6,8 @@ build_style=gnu-configure
 wrksrc=esdesktop-master
 configure_args="--with-locales-dir=/usr/share/locale"
 hostmakedepends="pkg-config intltool glib-devel xfce4-dev-tools gettext-devel"
-makedepends="clutter-devel"
-depends="hicolor-icon-theme"
+makedepends="libwnck-devel libexpidus1ui-devel endo-devel"
+depends="hicolor-icon-theme libwnck libexpidus1ui endo"
 short_desc="Dashboard for ExpidusOS Shell"
 maintainer="Tristan Ross <rosscomputerguy@protonmail.com>"
 license="GPL-2.0-or-later"
