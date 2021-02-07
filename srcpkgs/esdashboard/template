@@ -1,0 +1,20 @@
+# Template file for 'esdashboard'
+pkgname=esdashboard
+version=0.1.0
+revision=1
+build_style=gnu-configure
+wrksrc=esdesktop-master
+configure_args="--with-locales-dir=/usr/share/locale"
+hostmakedepends="pkg-config intltool glib-devel xfce4-dev-tools gettext-devel"
+makedepends="clutter-devel"
+depends="hicolor-icon-theme"
+short_desc="Dashboard for ExpidusOS Shell"
+maintainer="Tristan Ross <rosscomputerguy@protonmail.com>"
+license="GPL-2.0-or-later"
+homepage="http://expidusos.com"
+distfiles="https://github.com/ExpidusOS/esdashboard/archive/master.tar.gz"
+checksum=7a877f0e54708b07d5e1f2002ad479aa703c4a32fef17ff3dc1285f4c0e43651
+
+do_configure() {
+	./autogen.sh ${configure_args}
+}
