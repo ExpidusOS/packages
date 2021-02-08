@@ -1,7 +1,7 @@
 # Template file for 'xbps'
 pkgname=xbps
 version=0.59.1
-revision=1
+revision=2
 bootstrap=yes
 build_style=configure
 short_desc="XBPS package system utilities"
@@ -35,13 +35,8 @@ do_configure() {
 }
 
 post_install() {
-	local repo="https://alpha.de.repo.voidlinux.org/current" suffix=
-	case "$XBPS_TARGET_MACHINE" in
-		aarch64*)     suffix="/aarch64";;
-		*-musl)       suffix="/musl";;
-	esac
-
-	echo "repository=${repo}${suffix}" > \
+	local repo="https://repo.expidusos.com/0.1.0-prealpha/$XBPS_TARGET_MACHINE" suffix=
+	echo "repository=${repo}" > \
 		${DESTDIR}/usr/share/xbps.d/00-repository-main.conf
 	echo "architecture=${XBPS_TARGET_MACHINE}" > \
 		${DESTDIR}/usr/share/xbps.d/xbps-arch.conf
