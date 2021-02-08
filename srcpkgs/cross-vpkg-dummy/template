@@ -8,7 +8,7 @@ maintainer="Orphaned <orphan@voidlinux.org>"
 license="Public domain"
 homepage="https://www.voidlinux.org/"
 
-depends="base-files>=0.126"
+depends="base-files"
 
 provides="
 	kernel-libc-headers-9999_1
