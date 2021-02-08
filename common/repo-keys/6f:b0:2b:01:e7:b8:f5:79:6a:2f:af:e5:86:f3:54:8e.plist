@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>public-key</key>
+	<data>LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFxLzlrQnFYYzA3VmJIWk5UVnhoWQpybWw2cmlwNStSR0c0TnNwQXBhLzd5cWVpdThtaHQ3NkJBTFhFc2dRcmdjQ2tQZ0IvRm44OExyMlFlbUtLdDFwCjNGQmtES2lMODNKdFpsamJWbUN0K2E1NlBiS2ZXNEFGSm40ZHhoejVYMUxEd1dnOXVzSzhMemdWSGdZNzRLS2YKcHF5cDY0TlVTVEowRzN0YjBoSTlmV3NDamExSUVKbW5FZnN2S1MzTHFBTVBDem9wSW5wOCtkdHcveDZLaUtDNgprdlFPc1IzWUtpZFBPWGxKVlhVZ1poY21qOVNCeDdqMURjZnBnTHI0bmdBYWExN0VReXlQdjc4VHlQZ2xESEtwCmpGYnRjOUJoZUovY0M1WEtuVkdrekw4VUdiNjlDY1FLYkNsMDFXdWRVQ0NGQ3IxOVptRHVKclo0a3ZwcEVIcjgKTndJREFRQUIKLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0tCg==</data>
+	<key>public-key-size</key>
+	<integer>2048</integer>
+	<key>signature-by</key>
+	<string>Tristan Ross</string>
+</dict>
+</plist>
