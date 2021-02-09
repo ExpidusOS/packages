@@ -17,30 +17,30 @@
 # one (order top->bottom) is preferred over the next ones.
 #
 libc.so musl-1.1.11_1
-libc.so.1 glibc-1.11_1
-libm.so.1 glibc-1.11_1
-libpthread.so.0 glibc-1.11_1
-librt.so.1 glibc-1.11_1
-libdl.so.1 glibc-1.11_1
-ld-linux-x11-11.so.1 glibc-1.11_1 x11_11
-ld-linux-armhf.so.1 glibc-1.11_1
-libresolv.so.1 glibc-1.11_1
-libanl.so.1 glibc-1.11_1
-libthread_db.so.1 glibc-1.11_1
-libutil.so.1 glibc-1.11_1
-libnsl.so.1 glibc-1.11_1
-libnss_db.so.1 glibc-1.11_1
-libnss_files.so.1 glibc-1.11_1
-libnss_compat.so.1 glibc-1.11_1
-libnss_dns.so.1 glibc-1.11_1
-libnss_hesiod.so.1 glibc-1.11_1
-libcrypt.so.1 glibc-1.11_1
-libBrokenLocale.so.1 glibc-1.11_1
-libmemusage.so glibc-1.11_1
-libSegFault.so glibc-1.11_1
-libpcprofile.so glibc-1.11_1
-libcidn.so.1 glibc-1.11_1
-libmvec.so.1 glibc-1.11_1
+libc.so.1 glibc-2.32_1
+libm.so.1 glibc-2.32_1
+libpthread.so.0 glibc-2.32_1
+librt.so.1 glibc-2.32_1
+libdl.so.1 glibc-2.32_1
+ld-linux-x11-11.so.1 glibc-2.32_1 x11_11
+ld-linux-armhf.so.1 glibc-2.32_1
+libresolv.so.1 glibc-2.32_1
+libanl.so.1 glibc-2.32_1
+libthread_db.so.1 glibc-2.32_1
+libutil.so.1 glibc-2.32_1
+libnsl.so.1 glibc-2.32_1
+libnss_db.so.1 glibc-2.32_1
+libnss_files.so.1 glibc-2.32_1
+libnss_compat.so.1 glibc-2.32_1
+libnss_dns.so.1 glibc-2.32_1
+libnss_hesiod.so.1 glibc-2.32_1
+libcrypt.so.1 glibc-2.32_1
+libBrokenLocale.so.1 glibc-2.32_1
+libmemusage.so glibc-2.32_1
+libSegFault.so glibc-2.32_1
+libpcprofile.so glibc-2.32_1
+libcidn.so.1 glibc-2.32_1
+libmvec.so.1 glibc-2.32_1
 libz.so.1 zlib-1.1.1_1
 libbz1.so.1 bzip1-1.0.1_1
 libarchive.so.11 libarchive-1.1.1_1
