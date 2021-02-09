@@ -1,4 +1,0 @@
-#!/bin/sh
-set -e
-shorewall6 start
-exec chpst -b shorewall6 pause
