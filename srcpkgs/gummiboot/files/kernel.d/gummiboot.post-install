@@ -17,7 +17,7 @@ boot="$ROOTDIR/boot"
 entries="$boot/loader/entries"
 name="void-$VERSION"
 entry="$entries/$name.conf"
-options="$boot/loader/void-options.conf"
+options="$boot/loader/expidus-options.conf"
 loader="$boot/loader/loader.conf"
 
 [ -d "$boot" ] || exit 0
@@ -25,7 +25,7 @@ loader="$boot/loader/loader.conf"
 mkdir -p "$entries"
 
 cat <<-EOF > "$entry"
-	title Void Linux
+	title ExpidusOS
 	version $VERSION
 	linux /vmlinuz-$VERSION
 	initrd /initramfs-$VERSION.img

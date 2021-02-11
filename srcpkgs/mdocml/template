@@ -41,7 +41,7 @@ pre_configure() {
 		PREFIX=/usr
 		SBINDIR=/usr/bin
 		MANDIR=/usr/share/man
-		OSNAME="Void Linux"
+		OSNAME="ExpidusOS"
 		BINM_SOELIM=mandoc-soelim
 		MANM_ROFF="mandoc_roff"
 		LDFLAGS="$LDFLAGS"
