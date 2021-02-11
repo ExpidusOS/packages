@@ -1,4 +1,0 @@
-#!/bin/sh
-set -e
-odroid-led
-exec chpst -b odroid-led pause
