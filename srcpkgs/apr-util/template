@@ -11,7 +11,7 @@ configure_args="
  --with-dbm=db53 --with-crypto --with-openssl --without-oracle --enable-util-dso"
 hostmakedepends="libtool apr-devel"
 makedepends="zlib-devel libressl-devel apr-devel db-devel expat-devel
- gdbm-devel libldap-devel libmysqlclient-devel unixodbc-devel
+ gdbm-devel libldap-devel libmariadbclient-devel unixodbc-devel
  postgresql-libs-devel sqlite-devel"
 short_desc="Apache Portable Runtime Utility Library"
 maintainer="Orphaned <orphan@voidlinux.org>"
