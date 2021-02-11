@@ -1,13 +1,13 @@
 # Template file for 'base-chroot'
 pkgname=base-chroot
 version=0.1.0
-revision=1
+revision=3
 bootstrap=yes
 build_style=meta
 short_desc="Minimal set of packages required for chroot with xbps-src"
 maintainer="Tristan Ross <rosscomputerguy@protonmail.com>"
 license="Public Domain"
-homepage="http://www.expidusos.com"
+homepage="https://expidusos.com"
 
 case "$XBPS_TARGET_LIBC" in
 	musl) depends="musl-devel";;

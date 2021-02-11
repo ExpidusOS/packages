@@ -1,7 +1,7 @@
 # Template build for 'xcb-util-wm'.
 pkgname=xcb-util-wm
 version=0.4.1
-revision=1
+revision=3
 build_style=gnu-configure
 hostmakedepends="m4 pkg-config"
 makedepends="libxcb-devel xcb-util-devel"

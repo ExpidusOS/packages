@@ -49,7 +49,7 @@ do_configure() {
 
 	make -C $_crust $_hostcc $_or1k pinephone_defconfig
 	make -C $_uboot $_cross pinephone_defconfig
-	echo 'CONFIG_IDENT_STRING=" ExpidusOS"' >> $_uboot/.config
+	echo 'CONFIG_IDENT_STRING=" VoidLinux"' >> $_uboot/.config
 }
 
 do_build() {

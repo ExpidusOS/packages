@@ -1,7 +1,7 @@
 # Template file for 'kbd'
 pkgname=kbd
 version=2.3.0
-revision=1
+revision=2
 build_style=gnu-configure
 configure_args="--datadir=/usr/share/kbd --localedir=/usr/share/kbd/locale"
 hostmakedepends="automake libtool gettext-devel flex pkg-config"

@@ -1,7 +1,7 @@
 # Template file for 'sysfsutils'
 pkgname=sysfsutils
 version=2.1.0
-revision=1
+revision=7
 build_style=gnu-configure
 short_desc="System Utilities Based on Sysfs"
 maintainer="Orphaned <orphan@voidlinux.org>"

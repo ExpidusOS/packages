@@ -3,18 +3,19 @@ pkgname=base-system
 version=0.1.0
 revision=1
 build_style=meta
-short_desc="ExpidusOS Base System (meta)"
+short_desc="ExpidusOS base system meta package"
 maintainer="Tristan Ross <rosscomputerguy@protonmail.com>"
 license="Public Domain"
-homepage="http://www.expidusos.com"
+homepage="https://expidusos.com"
 
 depends="
- base-files>=0.77 ncurses coreutils findutils diffutils libgcc
- bash grep gzip file sed gawk less util-linux which tar man-pages
+ base-files ncurses coreutils findutils diffutils libgcc
+ dash bash grep gzip file sed gawk less util-linux which tar man-pages
  mdocml>=1.13.3 shadow e2fsprogs btrfs-progs xfsprogs f2fs-tools dosfstools
- procps-ng tzdata pciutils usbutils iana-etc openssh dhcpcd connman apparmor
+ procps-ng tzdata pciutils usbutils iana-etc openssh dhcpcd
  kbd iproute2 iputils iw wpa_supplicant xbps nvi sudo wifi-firmware
- traceroute ethtool kmod acpid eudev runit-expidus removed-packages"
+ void-artwork traceroute ethtool kmod acpid eudev runit-expidus connman
+ expidus1 lightdm"
 
 case "$XBPS_TARGET_MACHINE" in
 	*-musl) depends+=" musl";;

@@ -1,7 +1,7 @@
 # Template file for 'ladspa-sdk'
 pkgname=ladspa-sdk
 version=1.15
-revision=1
+revision=3
 wrksrc="ladspa_sdk_${version}"
 makedepends="libsndfile-progs"
 short_desc="Linux Audio Developer's Simple Plugin API (LADSPA)"

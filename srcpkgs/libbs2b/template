@@ -1,7 +1,7 @@
 # Template file for 'libbs2b'
 pkgname=libbs2b
 version=3.1.0
-revision=1
+revision=3
 build_style=gnu-configure
 hostmakedepends="pkg-config"
 makedepends="libsndfile-devel"

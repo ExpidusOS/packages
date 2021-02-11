@@ -3,9 +3,9 @@ pkgname=git
 version=2.30.1
 revision=1
 build_style=gnu-configure
-configure_args="--with-curl --with-expat --with-libpcre2"
-hostmakedepends="asciidoc gettext perl pkg-config tar xmlto"
-makedepends="libglib-devel libcurl-devel libsecret-devel pcre2-devel"
+configure_args="--with-curl --with-expat --with-tcltk --with-libpcre2"
+hostmakedepends="asciidoc gettext perl pkg-config tar tk xmlto"
+makedepends="libglib-devel libcurl-devel libsecret-devel pcre2-devel tk-devel"
 # Required by https://
 depends="ca-certificates perl-Authen-SASL perl-MIME-tools perl-Net-SMTP-SSL"
 short_desc="Git Tree History Storage Tool"
@@ -19,7 +19,7 @@ replaces="git-perl>=0"
 register_shell=/usr/bin/git-shell
 python_version=3
 
-subpackages="git-cvs git-svn git-all git-libsecret git-netrc"
+subpackages="git-cvs git-svn gitk git-gui git-all git-libsecret git-netrc"
 
 post_configure() {
 	cat <<-EOF >config.mak
@@ -60,11 +60,6 @@ post_install() {
 	vinstall contrib/credential/libsecret/git-credential-libsecret 755 \
 		usr/libexec/git-core
 	make -C contrib/credential/netrc DESTDIR=${DESTDIR} install
-	rm -rf ${DESTDIR}/usr/libexec/git-core/git-gui--askpass \
-		${DESTDIR}/usr/libexec/git-core/git-gui ${DESTDIR}/usr/libexec/git-core/git-citool \
-		${DESTDIR}/usr/share/man/man1/git-gui.1 ${DESTDIR}/usr/share/man/man1/git-citool.1 \
-		${DESTDIR}/usr/share/git-gui
-	rm -f usr/bin/gitk usr/share/gitk usr/share/man/man1/gitk.1
 }
 
 git-cvs_package() {
@@ -89,6 +84,31 @@ git-svn_package() {
 		vmove "usr/share/perl5/vendor_perl/Git/SVN*"
 		vmove usr/libexec/git-core/git-svn
 		vmove usr/share/man/man1/git-svn.1
+	}
+}
+
+gitk_package() {
+	depends="git-${version}_${revision} tk"
+	short_desc="Git repository browser"
+	license="GPL-2.0-or-later"
+	pkg_install() {
+		vmove usr/bin/gitk
+		vmove usr/share/gitk
+		vmove usr/share/man/man1/gitk.1
+	}
+}
+
+git-gui_package() {
+	depends="git-${version}_${revision} tk"
+	short_desc+=" - GUI tool"
+	license="GPL-2.0-or-later"
+	pkg_install() {
+		vmove usr/libexec/git-core/git-gui--askpass
+		vmove usr/libexec/git-core/git-gui
+		vmove usr/libexec/git-core/git-citool
+		vmove usr/share/man/man1/git-gui.1
+		vmove usr/share/man/man1/git-citool.1
+		vmove usr/share/git-gui
 	}
 }
 

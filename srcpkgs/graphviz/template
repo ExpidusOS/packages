@@ -6,7 +6,8 @@ wrksrc="graphviz-stable_release_${version}"
 build_style=gnu-configure
 make_build_args="HOSTCC=$BUILD_CC"
 hostmakedepends="automake flex libltdl-devel libtool perl pkg-config"
-makedepends="libpng-devel gd-devel librsvg-devel libltdl-devel"
+makedepends="libpng-devel gd-devel gtk+-devel librsvg-devel libltdl-devel
+ libXaw-devel"
 short_desc="Graph Visualization Software"
 maintainer="Leah Neukirchen <leah@vuxu.org>"
 license="EPL-1.0"
@@ -14,7 +15,6 @@ homepage="http://www.graphviz.org"
 distfiles="https://gitlab.com/graphviz/graphviz/-/archive/stable_release_${version}/graphviz-stable_release_${version}.tar.gz"
 checksum=71e1f5bcd88a3be8eaf2db88ab2b0881cbaedb362eeb8683c8679f69ebf4b244
 LDFLAGS="-lm"
-configure_args="--without-x --without-gtk"
 
 if [ -z "$CROSS_BUILD" ]; then
 	configure_args+=" --with-gts"

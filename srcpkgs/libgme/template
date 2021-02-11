@@ -5,7 +5,7 @@ revision=1
 wrksrc="game-music-emu-${version}"
 build_style=cmake
 configure_args="-DENABLE_UBSAN=OFF"
-makedepends="zlib-devel"
+makedepends="zlib-devel SDL2-devel"
 short_desc="Video game music file emulation/playback library"
 maintainer="Pierre Allegraud <pierre.allegraud@crans.org>"
 license="LGPL-2.1-or-later"

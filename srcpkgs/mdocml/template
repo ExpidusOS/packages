@@ -1,7 +1,7 @@
 # Template file for 'mdocml'
 pkgname=mdocml
 version=1.14.5
-revision=1
+revision=7
 wrksrc="mandoc-${version}"
 build_style=configure
 make_build_args="all man.cgi"
@@ -41,7 +41,7 @@ pre_configure() {
 		PREFIX=/usr
 		SBINDIR=/usr/bin
 		MANDIR=/usr/share/man
-		OSNAME="ExpidusOS"
+		OSNAME="Void Linux"
 		BINM_SOELIM=mandoc-soelim
 		MANM_ROFF="mandoc_roff"
 		LDFLAGS="$LDFLAGS"
@@ -69,8 +69,8 @@ post_install() {
 	vlicense LICENSE
 }
 
-expidus-man-cgi_package() {
-	short_desc="CGI manpage formatter for man.expidusos.com"
+void-man-cgi_package() {
+	short_desc="CGI manpage formatter for man.voidlinux.org"
 	depends="${sourcepkg}>=${version}_${revision}"
 	pkg_install() {
 		vmkdir usr/libexec/mandoc

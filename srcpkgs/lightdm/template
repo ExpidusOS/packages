@@ -31,6 +31,12 @@ make_dirs="
 build_options="gir"
 build_options_default="gir"
 
+if [ -z "$CROSS_BUILD" ]; then
+	configure_args+=" MOC5=/usr/lib/qt5/bin/moc"
+	makedepends+=" qt5-devel"
+	subpackages+=" liblightdm-qt5"
+fi
+
 post_install() {
 	# Remove provided init file and use our own.
 	rm -rf ${DESTDIR}/etc/init
@@ -56,8 +62,18 @@ liblightdm-gobject_package() {
 	}
 }
 
+liblightdm-qt5_package() {
+	short_desc+=" - QT 5.x support library"
+	pkg_install() {
+		vmove "usr/lib/liblightdm-qt5*.so.*"
+	}
+}
+
 lightdm-devel_package() {
 	depends="libglib-devel liblightdm-gobject-${version}_${revision}"
+	if [ -z "$CROSS_BUILD" ]; then
+		depends+=" liblightdm-qt5-${version}_${revision}"
+	fi
 	short_desc+=" - development files"
 	pkg_install() {
 		vmove usr/include

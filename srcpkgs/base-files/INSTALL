@@ -58,7 +58,7 @@ make_system_dirs() {
 	install -dm1777 var/tmp
 
 	# remove leftover polkit rules from live systems
-	[ -e etc/polkit-1/rules.d/expidus-live.rules ] && rm etc/polkit-1/rules.d/expidus-live.rules
+	[ -e etc/polkit-1/rules.d/void-live.rules ] && rm etc/polkit-1/rules.d/void-live.rules
 
 	# fix bad permissions from installer with umask 077
 	chmod 755 var var/db var/db/xbps usr usr/share

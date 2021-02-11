@@ -1,14 +1,14 @@
 # Template file for 'base-devel'
 pkgname=base-devel
-version=0.1.0
+version=20181003
 revision=2
 build_style=meta
 depends="autoconf automake bc binutils bison ed flex gcc gettext
  groff libtool m4 make patch pkg-config texinfo unzip xz"
-short_desc="ExpidusOS development tools meta package"
+short_desc="Void Linux development tools meta package"
 maintainer="Leah Neukirchen <leah@vuxu.org>"
 license="Public Domain"
-homepage="http://expidusos.com"
+homepage="http://www.voidlinux.org/"
 
 case "$XBPS_TARGET_MACHINE" in
 	*-musl) depends+=" musl-devel";;

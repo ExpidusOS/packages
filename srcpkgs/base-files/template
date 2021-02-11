@@ -1,13 +1,13 @@
 # Template file for 'base-files'
 pkgname=base-files
 version=0.1.0
-revision=1
+revision=7
 bootstrap=yes
 depends="xbps-triggers"
-short_desc="ExpidusOS System Files"
+short_desc="ExpidusOS Base System files"
 maintainer="Tristan Ross <rosscomputerguy@protonmail.com>"
 license="Public Domain"
-homepage="http://www.expidusos.com"
+homepage="http://expidusos.com"
 conf_files="
 	/etc/inputrc
 	/etc/profile
@@ -27,6 +27,7 @@ conf_files="
 	/etc/crypttab
 	/etc/nsswitch.conf"
 
+replaces="base-directories>=0"
 # New system groups
 system_groups="kvm:24"
 

@@ -3,7 +3,7 @@ pkgname=vim
 version=8.2.1948
 revision=1
 hostmakedepends="gettext glib-devel pkg-config"
-makedepends="acl-devel lua53-devel ncurses-devel
+makedepends="acl-devel gtk+3-devel libXt-devel lua53-devel ncurses-devel
  perl python3-devel ruby-devel"
 depends="vim-common>=${version}"
 short_desc="Vim editor (vi clone)"
@@ -14,10 +14,10 @@ distfiles="https://github.com/vim/vim/archive/v${version}.tar.gz"
 checksum=7f868ab36bd1a7f56e68366d7c767239b30c49beddb725c4b254cf95cf8b7dda
 python_version=3
 
-subpackages="xxd vim-common"
+subpackages="xxd vim-common vim-x11 gvim"
 # XXX vim-huge cannot be cross compiled for now.
 if [ -z "$CROSS_BUILD" ]; then
-	subpackages+=" vim-huge vim-huge-python3"
+	subpackages+=" vim-huge vim-huge-python3 gvim-huge"
 fi
 
 alternatives="vim:vim:/usr/bin/vim-normal"
@@ -54,10 +54,24 @@ do_configure() {
 	cd $wrksrc
 	./configure ${configure_args} ${args} ${nohuge_args} --disable-xim --enable-gui=no --with-x=no
 
+	# X11 version.
+	cd $wrksrc/vim-x11
+	./configure ${configure_args} ${args} ${nohuge_args} --enable-gui=no --with-x
+
+	# GTK+ version.
+	cd $wrksrc/gvim
+	./configure ${configure_args} ${args} ${nohuge_args} --enable-gui=gtk3 --with-x --with-vim-name=gvim
+
 	# Huge versions
 	if [ -z "$CROSS_BUILD" ]; then
 		cd $wrksrc/vim-huge
-		./configure ${configure_args} ${args} --with-x=no --enable-gui=no \
+		./configure ${configure_args} ${args} --with-x=yes --enable-gui=no \
+			--with-features=huge --enable-perlinterp --enable-python3interp \
+			--enable-rubyinterp --enable-luainterp --enable-terminal
+
+		cd $wrksrc/gvim-huge
+		./configure ${configure_args} ${args} \
+			--enable-gui=gtk3 --with-x --with-vim-name=gvim-huge \
 			--with-features=huge --enable-perlinterp --enable-python3interp \
 			--enable-rubyinterp --enable-luainterp --enable-terminal
 	fi
@@ -84,6 +98,15 @@ do_install() {
 	cd ${DESTDIR}/usr/bin
 	ln -sf vim vim-ex
 	rm -f ${DESTDIR}/usr/bin/{ex,view}
+
+	# install gvim icons
+	cd ${wrksrc}/gvim
+	sed -i "s|/locolor|/hicolor|g" src/Makefile
+	for d in 16 32 48; do
+		vmkdir usr/share/icons/hicolor/${d}x${d}/apps
+	done
+	make -C src DESTDIR=${DESTDIR} install-icons
+	rm -rf $DESTDIR/usr/share/applications
 }
 
 vim-common_package() {
@@ -108,6 +131,41 @@ vim-common_package() {
 		vmove usr/share/licenses
 		vmove usr/share/vim
 		vinstall ${FILESDIR}/vimrc 644 usr/share/vim
+	}
+}
+vim-x11_package() {
+	depends="vim-common-${version}_${revision}"
+	provides="vim-${version}_${revision}"
+	short_desc+=" - with access to X11 selection"
+	alternatives="vim:vim:/usr/bin/vim-x11"
+	pkg_install() {
+		vbin $wrksrc/vim-x11/src/vim vim-x11
+	}
+}
+gvim_package() {
+	depends="vim-common-${version}_${revision} desktop-file-utils hicolor-icon-theme"
+	provides="vim-${version}_${revision}"
+	short_desc+=" - GTK+ GUI"
+	alternatives="vim:vim:/usr/bin/gvim"
+	pkg_install() {
+		cd $wrksrc/gvim
+		make -C src DESTDIR=${PKGDESTDIR} installvimbin install-icons
+		rm -f ${PKGDESTDIR}/usr/share/applications/vim.desktop
+		rm -rf ${PKGDESTDIR}/usr/share/icons
+	}
+}
+gvim-huge_package() {
+	depends="python3 vim-common-${version}_${revision} desktop-file-utils hicolor-icon-theme"
+	provides="vim-${version}_${revision}"
+	short_desc+=" - GTK+ GUI - Huge (all features enabled)"
+	alternatives="vim:vim:/usr/bin/gvim-huge"
+	pkg_install() {
+		cd $wrksrc/gvim-huge
+		make -C src DESTDIR=${PKGDESTDIR} installvimbin install-icons
+		rm -f ${PKGDESTDIR}/usr/share/applications/vim.desktop
+		mv ${PKGDESTDIR}/usr/share/applications/{gvim,gvim-huge}.desktop
+		vsed -i 's,Exec=gvim,Exec=gvim-huge,g' ${PKGDESTDIR}/usr/share/applications/gvim-huge.desktop
+		rm -rf ${PKGDESTDIR}/usr/share/icons
 	}
 }
 vim-huge_package() {
