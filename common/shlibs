@@ -16,19 +16,17 @@
 # PLEASE NOTE: when multiple packages provide the same SONAME, the first
 # one (order top->bottom) is preferred over the next ones.
 #
-liblunarx-1.so.0 Lunar-0.1.0_1
+libdevident.so libdevident-0.1.0_1
+liblunarx-3.so.0 Lunar-0.1.0_1
 libesconf-0.so.1 esconf-0.1.0_1
-libexpidus1util.so.1 libexpidus1util-0.1.0_1
-libexpidus1panel-1.0.so.1 libexpidus1panel-0.1.0_1
-libexpidus1panel-1.0.so.1 libexpidus1panel-0.1.0_1
-libexpidus1ui-1.so.0 libexpidus1ui-0.1.0_1
-libexpidus1ui-1.so.0 libexpidus1ui-0.1.0_1
-libexpidus1kbd-private-1.so.0 libexpidus1ui-0.1.0_1
-libexpidus1kbd-private-1.so.0 libexpidus1ui-0.1.0_1
+libexpidus1util.so.7 libexpidus1util-0.1.0_1
+libexpidus1panel-2.0.so.1 libexpidus1panel-0.1.0_1
+libexpidus1ui-2.so.0 libexpidus1ui-0.1.0_1
+libexpidus1kbd-private-3.so.0 libexpidus1ui-0.1.0_1
 libmarkon-1.so.0 markon-0.1.0_1
-libmarkon-gtk1-1.so.0 markon-0.1.0_1
-libmarkon-gtk1-1.so.0 markon-0.1.0_1
-libendo-1.so.0 endo-0.1.0_1
+libmarkon-gtk3-1.so.0 markon-0.1.0_1
+libmarkon-gtk3-1.so.0 markon-0.1.0_1
+libendo-2.so.0 endo-0.1.0_1
 libc.so musl-1.1.21_1
 libc.so.6 glibc-2.32_1
 libm.so.6 glibc-2.32_1

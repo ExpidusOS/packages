@@ -69,7 +69,7 @@ post_install() {
 	vlicense LICENSE
 }
 
-void-man-cgi_package() {
+expidus-man-cgi_package() {
 	short_desc="CGI manpage formatter for man.voidlinux.org"
 	depends="${sourcepkg}>=${version}_${revision}"
 	pkg_install() {

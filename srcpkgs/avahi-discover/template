@@ -9,7 +9,7 @@ revision=3
 wrksrc="avahi-${version}"
 build_style=gnu-configure
 build_helper="gir"
-configure_args="--disable-qt3 --disable-qt4 --disable-mono --disable-monodoc
+configure_args="--disable-qt3 --disable-qt4 --disable-qt5 --disable-mono --disable-monodoc
  --disable-doxygen-doc --enable-compat-libdns_sd --enable-compat-howl
  --with-xml=expat --with-avahi-user=avahi --with-avahi-group=avahi
  --with-avahi-priv-access-group=network --with-autoipd-user=avahi
@@ -33,9 +33,9 @@ skip_extraction="build-db.txt"
 python_version=3
 
 hostmakedepends="automake libtool pkg-config intltool gettext-devel
- python3-dbus gobject-introspection glib-devel qt5-host-tools xmltoman"
+ python3-dbus gobject-introspection glib-devel xmltoman"
 makedepends="dbus-devel libcap-devel libdaemon-devel gdbm-devel libevent-devel
- python3-dbus gtk+-devel gtk+3-devel qt5-devel $(vopt_if gir python3-gobject-devel)"
+ python3-dbus gtk+-devel gtk+3-devel $(vopt_if gir python3-gobject-devel)"
 depends="avahi>=${version} avahi-python3>=${version}_${revision}
  $(vopt_if gir 'gtk+3 python3-gobject') desktop-file-utils"
 
@@ -78,16 +78,13 @@ do_install() {
 	done
 	mv ${wrksrc}/tmpinstall/usr/include/avahi-g* ${DESTDIR}/usr/include
 	mv ${wrksrc}/tmpinstall/usr/include/avahi-ui* ${DESTDIR}/usr/include
-	mv ${wrksrc}/tmpinstall/usr/include/avahi-qt* ${DESTDIR}/usr/include
 	mv ${wrksrc}/tmpinstall/usr/include/avahi-libevent* ${DESTDIR}/usr/include
 	mv ${wrksrc}/tmpinstall/${py3_lib} ${DESTDIR}/usr/lib
 	mv ${wrksrc}/tmpinstall/usr/lib/*avahi-g* ${DESTDIR}/usr/lib
 	mv ${wrksrc}/tmpinstall/usr/lib/*avahi-ui* ${DESTDIR}/usr/lib
-	mv ${wrksrc}/tmpinstall/usr/lib/*avahi-qt* ${DESTDIR}/usr/lib
 	mv ${wrksrc}/tmpinstall/usr/lib/*avahi-libevent* ${DESTDIR}/usr/lib
 	mv ${wrksrc}/tmpinstall/usr/lib/pkgconfig/avahi-g* ${DESTDIR}/usr/lib/pkgconfig
 	mv ${wrksrc}/tmpinstall/usr/lib/pkgconfig/avahi-ui* ${DESTDIR}/usr/lib/pkgconfig
-	mv ${wrksrc}/tmpinstall/usr/lib/pkgconfig/avahi-qt* ${DESTDIR}/usr/lib/pkgconfig
 	mv ${wrksrc}/tmpinstall/usr/lib/pkgconfig/avahi-libevent* ${DESTDIR}/usr/lib/pkgconfig
 	mv ${wrksrc}/tmpinstall/usr/share/avahi/interfaces/*.ui ${DESTDIR}/usr/share/avahi/interfaces
 
@@ -190,26 +187,6 @@ avahi-ui-utils_package() {
 		vmove usr/share/man/man1/bvnc.1
 		vmove usr/bin/bvnc
 		vmove usr/bin/bshell
-	}
-}
-
-avahi-qt5-libs_package() {
-	short_desc="Avahi Qt5 shared libraries"
-	pkg_install() {
-		vmove "usr/lib/libavahi-qt5.so.*"
-	}
-}
-
-avahi-qt5-libs-devel_package() {
-	short_desc="Avahi Qt5 shared libraries - development files"
-	depends="
-	 qt5-devel avahi-libs-devel>=${version}
-	 avahi-qt5-libs>=${version}_${revision}
-	"
-	pkg_install() {
-		vmove usr/lib/pkgconfig/avahi-qt5.pc
-		vmove usr/lib/libavahi-qt5.so
-		vmove usr/include/avahi-qt5
 	}
 }
 

@@ -14,7 +14,7 @@ checksum=ad009240d46e307b4e03a213a0f49c11b650e445b1f8be0dda2a9212b34d2ffb
 hostmakedepends="pkg-config perl yasm"
 makedepends="zlib-devel bzip2-devel freetype-devel alsa-lib-devel libXfixes-devel
  libXext-devel libXvMC-devel libxcb-devel faad2-devel lame-devel libtheora-devel
- gnutls-devel libvorbis-devel x264-devel xvidcore-devel jack-devel SDL2-devel
+ gnutls-devel libvorbis-devel x264-devel xvidcore-devel jack-devel
  libcdio-paranoia-devel librtmp-devel libmodplug-devel gnutls-devel
  speex-devel celt-devel harfbuzz-devel libass-devel opus-devel ocl-icd-devel
  libbs2b-devel libvidstab-devel $(vopt_if pulseaudio pulseaudio-devel)

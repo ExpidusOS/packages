@@ -8,7 +8,7 @@ hostmakedepends="perl"
 maintainer="Enno Boland <gottox@voidlinux.org>"
 license="GPL-3"
 homepage="http://sourceforge.net/projects/hunspell/files/Hyphen"
-distfiles="${SOURCEFORGE_SITE}/hunspell/$pkgname-$version.tar.gz"
+distfiles="https://sources.voidlinux.org/${pkgname}-${version}/${pkgname}-${version}.tar.gz"
 checksum=304636d4eccd81a14b6914d07b84c79ebb815288c76fe027b9ebff6ff24d5705
 
 hyphen-tools_package() {

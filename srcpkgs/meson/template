@@ -6,7 +6,7 @@ build_style=python3-module
 hostmakedepends="python3-devel python3-setuptools"
 depends="ninja python3-setuptools"
 checkdepends="glib-devel gobject-introspection ninja
- gcc-objc++ clang qt5-devel cmake llvm git pkg-config vala python-devel
+ gcc-objc++ clang cmake llvm git pkg-config vala python-devel
  cross-arm-linux-gnueabihf"
 short_desc="Super fast build system"
 maintainer="John <me@johnnynator.dev>"
