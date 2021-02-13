@@ -1,12 +1,12 @@
 # Template file for 'base-minimal'
 pkgname=base-minimal
-version=0.3
+version=0.1.0
 revision=1
 build_style=meta
 short_desc="ExpidusOS base system meta with minimal tools"
-maintainer="Enno Boland <gottox@voidlinux.org>"
+maintainer="Tristan Ross <rosscomputerguy@protonmail.com>"
 license="Public Domain"
-homepage="https://www.voidlinux.org/"
+homepage="https://expidusos.com"
 
 depends="
  base-files coreutils findutils diffutils bash grep gzip sed gawk
