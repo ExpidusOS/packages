@@ -25,6 +25,8 @@ provides="
 	libgo-devel-9999_1
 	libobjc-9999_1
 	libobjc-devel-9999_1
+  libssp-9999_1
+  libssp-devel-9999_1
 	gcc-9999_1
 	gcc-fortran-9999_1
 	gcc-ada-9999_1
@@ -46,6 +48,8 @@ conflicts="
 	libgo-devel>=0
 	libobjc>=0
 	libobjc-devel>=0
+  libssp>=0
+  libssp-devel>=0
 	gcc>=0
 	gcc-fortran>=0
 	gcc-ada>=0
@@ -57,13 +61,12 @@ shlib_provides="
 	libgnat-10.so
 	libgnarl-10.so
 	libstdc++.so.6
-	libgfortran.so.5"
+	libgfortran.so.5
+  libssp.so.0"
 
 if [ "$XBPS_TARGET_LIBC" = "musl" ]; then
 	provides+=" musl-9999_1 musl-devel-9999_1"
 	# bundled in musl crosstoolchains but not glibc
-	provides+=" libssp-9999_1 libssp-devel-9999_1"
-	shlib_provides+=" libssp.so.0"
 	conflicts+=" musl>=0"
 	shlib_provides+=" libc.so"
 else
