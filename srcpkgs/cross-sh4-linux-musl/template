@@ -34,7 +34,7 @@ cross_triplet=${_triplet}
 cross_gcc_configure_args="--enable-libquadmath"
 cross_musl_cflags="-O2"
 
-if [ "$XBPS_TARGET_MACHINE" = "x86_64-musl" ]; then
+if [ "$XBPS_TARGET_MACHINE" = "sh4-musl" ]; then
 	broken="Can't build crosstoolchain to itself"
 fi
 
