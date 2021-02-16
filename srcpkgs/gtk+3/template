@@ -46,7 +46,7 @@ do_check() {
 post_install() {
 	rm -f ${DESTDIR}/usr/bin/gtk-update-icon-cache
 	rm -f ${DESTDIR}/usr/share/man/man1/gtk-update-icon-cache.1
-	install -Dm644 /dev/stdin "$pkgdir/usr/share/gtk-3.0/settings.ini" <<EOF
+	install -Dm644 /dev/stdin "$DESTDIR/usr/share/gtk-3.0/settings.ini" <<EOF
 [Settings]
 gtk-icon-theme = Papirus-Dark
 gtk-theme-name = Tokyo-dark
