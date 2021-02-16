@@ -37,5 +37,6 @@ git checkout master
 if ! git merge origin/merging; then
 	git status | grep "added by us:" | cut -f2 -d ':' | xargs git add
 	git status | grep "deleted by us:" | cut -f2 -d ':' | xargs git rm
+	git commit -a -m "Resolved merge conflicts (automated)"
 fi
 git branch -d origin/merging
