@@ -21,7 +21,7 @@ makedepends="at-spi2-atk-devel gdk-pixbuf-devel libepoxy-devel pango-devel
  $(vopt_if wayland 'libxkbcommon-devel wayland-devel wayland-protocols MesaLib-devel')
  $(vopt_if x11 'libXcursor-devel libXdamage-devel libXext-devel libXinerama-devel libXi-devel libXrandr-devel libXcomposite-devel')
  $(vopt_if cloudproviders 'libcloudproviders-devel')"
-depends="gtk-update-icon-cache adwaita-icon-theme
+depends="gtk-update-icon-cache adwaita-icon-theme papirus-icon-theme tokyo-theme
  librsvg shared-mime-info $(vopt_if x11 'dbus-x11')"
 short_desc="GTK+ toolkit (v3)"
 maintainer="Enno Boland <gottox@voidlinux.org>"
@@ -46,6 +46,12 @@ do_check() {
 post_install() {
 	rm -f ${DESTDIR}/usr/bin/gtk-update-icon-cache
 	rm -f ${DESTDIR}/usr/share/man/man1/gtk-update-icon-cache.1
+	install -Dm644 /dev/stdin "$pkgdir/usr/share/gtk-3.0/settings.ini" <<EOF
+[Settings]
+gtk-icon-theme = Papirus-Dark
+gtk-theme-name = Tokyo-dark
+gtk-font-name = Cantarell 11
+EOF
 }
 
 gtk+3-devel_package() {
