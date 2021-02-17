@@ -11,6 +11,7 @@ depends="
 	esdesktop>=${version}
 	eswm1>=${version}
 	expidus1-power-manager>=${version}
+	expidus1-screenshooter>=${version}
 	esdashboard>=${version}
 	Lunar>=${version}
 	endo>=${version}
