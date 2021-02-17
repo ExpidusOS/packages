@@ -48,7 +48,7 @@ post_install() {
 	rm -f ${DESTDIR}/usr/share/man/man1/gtk-update-icon-cache.1
 	install -Dm644 /dev/stdin "$DESTDIR/usr/share/gtk-3.0/settings.ini" <<EOF
 [Settings]
-gtk-icon-theme = Papirus-Dark
+gtk-icon-theme-name = Papirus-Dark
 gtk-theme-name = Tokyo-dark
 gtk-font-name = Cantarell 11
 EOF
