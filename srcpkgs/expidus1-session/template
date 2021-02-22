@@ -1,7 +1,7 @@
 # Template file for 'expidus1-session'
 pkgname=expidus1-session
 version=0.1.0
-revision=1
+revision=2
 build_style=gnu-configure
 wrksrc="session-master"
 configure_args="--with-locales-dir=/usr/share/locale --disable-static --enable-polkit"
@@ -15,7 +15,7 @@ maintainer="Tristan Ross <rosscomputerguy@protonmail.com>"
 license="GPL-2.0-or-later"
 homepage="http://expidusos.com"
 distfiles="https://github.com/ExpidusOS/session/archive/master.tar.gz"
-checksum=673335c115cfc207e869971719f393a3e3ff92e57f1353b4b3df39f717679bcf
+checksum=a6d5eb5d75e99a1d923d3db809d2635fb99ade1450548b44154861bafeb67d49
 
 do_configure() {
 	./autogen.sh ${configure_args}
