@@ -1,6 +1,0 @@
-#!/bin/sh
-
-[ -r conf ] && . ./conf
-
-# use `-N` without a conf file to not grab all interfaces by default
-exec smcrouted -n -s ${OPTS:--N}
