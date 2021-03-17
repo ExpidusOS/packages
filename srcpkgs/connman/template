@@ -34,6 +34,8 @@ post_install() {
 	vbin client/connmanctl
 	vsv connmand
 	vinstall ${FILESDIR}/connmand.conf 755 usr/share/dbus-1/system.d/
+	vinstall ${FILESDIR}/src/connman-dbus.conf 755 etc/dbus-1/system.d/
+	vinstall ${FILESDIR}/src/connman-polkit.conf 755 etc/dbus-1/system.d/
 }
 
 connman-devel_package() {
