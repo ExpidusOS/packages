@@ -1,0 +1,32 @@
+# Template file for 'flutter'
+pkgname=flutter
+version=2.0.1
+revision=1
+short_desc="A new mobile app SDK to help developers and designers build modern mobile apps for iOS and Android."
+homepage="https://flutter.io"
+maintainer="Tristan Ross <rosscomputerguy@protonmail.com>"
+license="BSD-3-Clause"
+hostmakedepends="python"
+system_groups="flutter"
+conf_files="
+	/opt/flutter/packages/flutter/pubspec.yaml"
+	/opt/flutter/packages/flutter_test/pubspec.yaml"
+make_dirs="/opt/flutter 755 root flutter"
+distfiles="https://storage.googleapis.com/flutter_infra/releases/stable/linux/${pkgname}_linux_${version/.hotfix/+hotfix}-stable.tar.xz"
+checksum=7938e7c78cd277fcf2f01291cd590b9d5adb0c4342763044c9d9678901829241
+
+do_build() {
+	./bin/flutter doctor
+}
+
+do_install() {
+	rm bin/cache .pub-cache -rf
+	vinstall "${FILESDIR}/flutter.sh" /etc/profile.d/flutter.sh 755
+	vmkdir /opt/flutter
+	vmkdir /usr/bin
+	cp -ra "${wrksrc}" "${DESTDIR}/opt/"
+	find "${DESTDIR}/opt/flutter" -type d -exec chmod a+rx {} +
+	find "${DESTDIR}/opt/flutter" -type f -exec chmod a+r {} +
+	chmod a+rw "${DESTDIR}/opt/flutter/version"
+	ln -s "/opt/flutter/bin/flutter" "${DESTDIR}/usr/bin/flutter"
+}
