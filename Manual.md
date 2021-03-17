@@ -146,6 +146,11 @@ fonts).
 Browser forks, including those based on Chromium and Firefox, are generally not
 accepted. Such forks require heavy patching, maintenance and hours of build time.
 
+Software need to be used in version announced by authors as ready to use by
+the general public - usually called releases. Betas, arbitrary VCS revisions,
+templates using tip of development branch taken at build time and releases
+created by the package maintainer won't be accepted.
+
 <a id="buildphase"></a>
 ### Package build phases
 
@@ -971,9 +976,9 @@ via `make_install_target`.
 via `configure_args`, the meson command can be overridden by `meson_cmd` and the location of
 the out of source build by `meson_builddir`
 
-- `void-cross` For cross-toolchain packages used to build Void systems. You will need to
-specify `cross_triplet` (corresponds to the target triplet specified in the cross profile
-for the target arch). Optionally, `cross_gcc_skip_go` can be specified. Individual subproject
+- `void-cross` For cross-toolchain packages used to build Void systems. There are no
+mandatory variables (target triplet is inferred), but you can specify some optional
+ones - `cross_gcc_skip_go` can be specified to skip `gccgo`, individual subproject
 configure arguments can be specified via `cross_*_configure_args` where `*` is `binutils`,
 `gcc_bootstrap` (early gcc), `gcc` (final gcc), `glibc` (or `musl`), `configure_args` is
 additionally passed to both early and final `gcc`. You can also specify custom `CFLAGS`
