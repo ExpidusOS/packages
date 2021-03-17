@@ -1,0 +1,134 @@
+# Template file for 'vim'
+pkgname=vim
+version=8.2.2513
+revision=1
+hostmakedepends="gettext glib-devel pkg-config"
+makedepends="acl-devel gtk+3-devel libXt-devel lua53-devel ncurses-devel
+ perl python3-devel ruby-devel"
+depends="vim-common>=${version}"
+short_desc="Vim editor (vi clone)"
+maintainer="Neel Chotai <neel@chot.ai>"
+license="Vim"
+homepage="https://www.vim.org"
+distfiles="https://github.com/vim/vim/archive/v${version}.tar.gz"
+checksum=de00136dd5f5194d15717bab449bf04baaa3a8c5efa8547da878514e50879b36
+python_version=3
+
+subpackages="xxd vim-common"
+# XXX vim-huge cannot be cross compiled for now.
+if [ -z "$CROSS_BUILD" ]; then
+	subpackages+=" vim-huge vim-huge-python3"
+fi
+
+alternatives="vim:vim:/usr/bin/vim-normal"
+
+pre_configure() {
+	for f in ${subpackages/xxd vim-common/}; do
+		mkdir -p /tmp/${f}
+		cp -a $wrksrc/* /tmp/${f}
+		mv /tmp/${f} $wrksrc/${f}
+	done
+}
+
+do_configure() {
+	args="--enable-cscope --enable-multibyte --with-tlib=ncursesw
+		--with-ex-name=vim-ex --with-view-name=vim-view"
+
+	nohuge_args="--disable-perlinterp --disable-pythoninterp
+		--disable-rubyinterp --disable-workshop
+		--disable-netbeans --disable-gpm
+		--disable-hangulinput"
+
+	if [ "$CROSS_BUILD" ]; then
+		configure_args+="
+			--host=${XBPS_CROSS_TRIPLET}
+			vim_cv_toupper_broken=no vim_cv_terminfo=yes
+			vim_cv_tty_group=world vim_cv_getcwd_broken=no
+			vim_cv_stat_ignores_slash=yes
+			vim_cv_memmove_handles_overlap=yes
+			vim_cv_tgetent=zero
+			ac_cv_small_wchar_t=no"
+	fi
+
+	# Normal version.
+	cd $wrksrc
+	./configure ${configure_args} ${args} ${nohuge_args} --disable-xim --enable-gui=no --with-x=no
+
+	# Huge versions
+	if [ -z "$CROSS_BUILD" ]; then
+		cd $wrksrc/vim-huge
+		./configure ${configure_args} ${args} --with-x=no --enable-gui=no \
+			--with-features=huge --enable-perlinterp --enable-python3interp \
+			--enable-rubyinterp --enable-luainterp --enable-terminal
+	fi
+}
+
+do_build() {
+	cd $wrksrc
+	make ${makejobs}
+
+	for f in ${subpackages/xxd vim-common/}; do
+		cd $wrksrc/$f
+		make ${makejobs}
+	done
+
+}
+
+do_install() {
+	make DESTDIR=$DESTDIR install
+	vlicense runtime/doc/uganda.txt LICENSE
+
+	mv ${DESTDIR}/usr/bin/vim ${DESTDIR}/usr/bin/vim-normal
+
+	# Create vim-ex symlink.
+	cd ${DESTDIR}/usr/bin
+	ln -sf vim vim-ex
+	rm -f ${DESTDIR}/usr/bin/{ex,view}
+}
+
+vim-common_package() {
+	short_desc+=" - common files"
+	depends="xxd"
+	alternatives="
+	 vi:ex:/usr/bin/vim
+	 vi:ex.1:/usr/share/man/man1/vim.1
+	 vi:vi:/usr/bin/vim
+	 vi:vi.1:/usr/share/man/man1/vim.1
+	 vi:view:/usr/bin/vim
+	 vi:view.1:/usr/share/man/man1/vim.1
+	"
+	pkg_install() {
+		vmove usr/share/icons
+		vmove usr/bin/rvim
+		vmove usr/bin/vim-ex
+		vmove usr/bin/vimdiff
+		vmove usr/bin/vimtutor
+		vmove usr/bin/*view
+		vmove "usr/share/man/man1/*vim*"
+		vmove usr/share/licenses
+		vmove usr/share/vim
+		vinstall ${FILESDIR}/vimrc 644 usr/share/vim
+	}
+}
+vim-huge_package() {
+	depends="python3 vim-common-${version}_${revision}"
+	short_desc+=" - Huge (all features enabled)"
+	provides="vim-${version}_${revision}"
+	alternatives="vim:vim:/usr/bin/vim-huge"
+	pkg_install() {
+		vbin $wrksrc/vim-huge/src/vim vim-huge
+	}
+}
+vim-huge-python3_package() {
+	depends="vim-huge"
+	short_desc+=" - transitional packages"
+	build_style=meta
+	provides="vim-${version}_${revision}"
+}
+xxd_package() {
+	short_desc="Make a hexdump or do the reverse"
+	pkg_install() {
+		vmove usr/bin/xxd
+		vmove usr/share/man/man1/xxd.1
+	}
+}

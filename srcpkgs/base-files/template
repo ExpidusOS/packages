@@ -1,12 +1,7 @@
 # Template file for 'base-files'
 pkgname=base-files
-<<<<<<< HEAD
 version=0.1.0
 revision=7
-=======
-version=0.141
-revision=11
->>>>>>> origin/merging
 bootstrap=yes
 depends="xbps-triggers"
 short_desc="ExpidusOS Base System files"
@@ -78,12 +73,7 @@ do_install() {
 	vinstall ${FILESDIR}/usb-load-ehci-first 644 usr/lib/modprobe.d usb-load-ehci-first.conf
 	vinstall ${FILESDIR}/blacklist.conf 644 usr/lib/modprobe.d
 	# sysctl(8) files
-<<<<<<< HEAD
 	vinstall ${FILESDIR}/sysctl.conf 644 usr/lib/sysctl.d 10-expidus.conf
-=======
-	vinstall ${FILESDIR}/sysctl.conf 644 usr/lib/sysctl.d 10-void.conf
-	vinstall ${FILESDIR}/sysctl-user.conf 644 usr/lib/sysctl.d 10-void-user.conf
->>>>>>> origin/merging
 
 	# Install common licenses, from Debian.
 	vmkdir usr/share/licenses
