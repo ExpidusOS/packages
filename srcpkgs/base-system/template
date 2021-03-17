@@ -15,7 +15,7 @@ depends="
  procps-ng tzdata pciutils usbutils iana-etc openssh dhcpcd
  kbd iproute2 iputils iw wpa_supplicant xbps nvi sudo wifi-firmware
  traceroute ethtool kmod acpid eudev runit-expidus connman ModemManager
- expidus1 lightdm apparmor lightdm-gtk-greeter"
+ lightdm apparmor"
 
 case "$XBPS_TARGET_MACHINE" in
 	*-musl) depends+=" musl";;
