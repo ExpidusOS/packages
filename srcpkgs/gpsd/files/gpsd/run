@@ -1,3 +1,0 @@
-#!/bin/sh
-[ -r conf ] && . ./conf
-exec /usr/bin/gpsd -N -F /run/gpsd.sock $OPTS ${DEV:=/dev/gps0}

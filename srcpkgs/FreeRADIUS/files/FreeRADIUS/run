@@ -1,2 +1,0 @@
-#!/bin/sh
-exec chpst -u _freeradius:_freeradius radiusd -f

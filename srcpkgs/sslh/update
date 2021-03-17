@@ -1,1 +1,0 @@
-pattern='sslh/archive/v\K[\d.]+[a-z]?(?=\.tar)'
