@@ -1,6 +1,10 @@
 # Template file for 'linux-firmware'
 pkgname=linux-firmware
+<<<<<<< HEAD
 version=20210208
+=======
+version=20210511
+>>>>>>> origin/merging
 revision=1
 depends="${pkgname}-amd>=${version}_${revision} ${pkgname}-network>=${version}_${revision}"
 short_desc="Binary firmware blobs for the Linux kernel"
@@ -8,7 +12,7 @@ maintainer="Orphaned <orphan@voidlinux.org>"
 license="See /usr/share/licenses/${pkgname}"
 homepage="https://www.kernel.org/"
 distfiles="https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/${pkgname}-${version}.tar.gz"
-checksum=c5d0448326b5fba5bc97ab448d641d8e093e365fc496e5ea3da6bfd31fa94770
+checksum=4c38e6a15775e2911e60898804f1d5720f8e3992a79487a5c1b2250df49a11c4
 python_version=3
 nostrip=yes
 
@@ -45,6 +49,9 @@ linux-firmware-broadcom_package() {
 	pkg_install() {
 		vmove usr/lib/firmware/brcm
 		vmove usr/share/licenses/linux-firmware/LICENCE.broadcom_bcm43xx
+		# firmware/brcm contains multiple symlinks to ../cypress/
+		vmove usr/lib/firmware/cypress
+		vmove usr/share/licenses/linux-firmware/LICENCE.cypress
 	}
 }
 

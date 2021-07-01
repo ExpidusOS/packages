@@ -49,10 +49,10 @@ SET(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 SET(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
 SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 _EOF
-		cmake_args+=" -DCMAKE_TOOLCHAIN_FILE=cross_${XBPS_CROSS_TRIPLET}.cmake"
+		cmake_args+=" -DCMAKE_TOOLCHAIN_FILE=${wrksrc}/${build_wrksrc}/${cmake_builddir}/cross_${XBPS_CROSS_TRIPLET}.cmake"
 	fi
 	cmake_args+=" -DCMAKE_INSTALL_PREFIX=/usr"
-	cmake_args+=" -DCMAKE_BUILD_TYPE=Release"
+	cmake_args+=" -DCMAKE_BUILD_TYPE=None"
 	cmake_args+=" -DCMAKE_INSTALL_LIBDIR=lib${XBPS_TARGET_WORDSIZE}"
 
 	if [[ $build_helper = *"qemu"* ]]; then
@@ -113,7 +113,7 @@ do_check() {
 
 	: ${make_check_target:=test}
 
-	CTEST_OUTPUT_ON_FAILURE=TRUE ${make_cmd} ${make_check_args} ${make_check_target}
+	${make_cmd} ${make_check_args} ${make_check_target}
 }
 
 do_install() {

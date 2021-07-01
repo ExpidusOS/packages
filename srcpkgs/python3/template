@@ -3,7 +3,11 @@
 # THIS PKG MUST BE SYNCHRONIZED WITH "srcpkgs/python3-tkinter".
 #
 pkgname=python3
+<<<<<<< HEAD
 version=3.9.2
+=======
+version=3.9.6
+>>>>>>> origin/merging
 revision=1
 wrksrc="Python-${version}"
 pycompile_dirs="usr/lib/python${version%.*}"
@@ -11,13 +15,13 @@ hostmakedepends="pkgconf"
 makedepends="libffi-devel readline-devel gdbm-devel libressl-devel
  expat-devel sqlite-devel bzip2-devel zlib-devel liblzma-devel"
 depends="ca-certificates"
-checkdepends="$depends iana-etc tzdata"
+checkdepends="$depends iana-etc"
 short_desc="Python programming language (${version%.*} series)"
 maintainer="Andrew J. Hesford <ajh@sideband.org>"
 license="Python-2.0"
 homepage="https://www.python.org"
 distfiles="https://www.python.org/ftp/python/${version}/Python-${version}.tar.xz"
-checksum=3c2034c54f811448f516668dce09d24008a0716c3a794dd8639b5388cbde247d
+checksum=397920af33efc5b97f2e0b57e91923512ef89fc5b3c1d21dbfc8c4828ce0108a
 
 alternatives="
  python:idle:/usr/bin/idle${version%.*}
@@ -48,7 +52,7 @@ do_configure() {
 	fi
 	./configure ${configure_args} ${_args} \
 		--enable-shared --enable-ipv6 --enable-loadable-sqlite-extensions \
-		--with-threads --with-computed-gotos --with-dbmliborder=gdbm:ndbm \
+		--with-computed-gotos --with-dbmliborder=gdbm:ndbm \
 		--with-system-expat --with-system-ffi --without-ensurepip
 }
 

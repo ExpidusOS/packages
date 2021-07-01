@@ -1,6 +1,10 @@
 # Template file for 'apache'
 pkgname=apache
+<<<<<<< HEAD
 version=2.4.46
+=======
+version=2.4.48
+>>>>>>> origin/merging
 revision=1
 wrksrc="httpd-${version}"
 build_style=gnu-configure
@@ -36,7 +40,7 @@ license="Apache-2.0"
 homepage="http://httpd.apache.org/"
 changelog="http://www.apache.org/dist/httpd/CHANGES_2.4"
 distfiles="https://archive.apache.org/dist/httpd/httpd-${version}.tar.bz2"
-checksum=740eddf6e1c641992b22359cabc66e6325868c3c5e2e3f98faf349b61ecf41ea
+checksum=1bc826e7b2e88108c7e4bf43c026636f77a41d849cfb667aa7b5c0b86dbf966c
 
 system_accounts="_${pkgname}"
 _apache_homedir="/srv/www/$pkgname"

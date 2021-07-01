@@ -1,6 +1,10 @@
 # Template file for 'linux5.10'
 pkgname=linux5.10
+<<<<<<< HEAD
 version=5.10.18
+=======
+version=5.10.47
+>>>>>>> origin/merging
 revision=1
 wrksrc="linux-${version}"
 short_desc="Linux kernel and modules (${version%.*} series)"
@@ -8,9 +12,12 @@ maintainer="Leah Neukirchen <leah@vuxu.org>"
 license="GPL-2.0-only"
 homepage="https://www.kernel.org"
 distfiles="https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-${version}.tar.xz"
+<<<<<<< HEAD
 checksum=3bc1ee2b1bf73b5ba936721953f3f9599fd165cef906cd5163c68d23cb9bb611
+=======
+checksum=30b52a2fe6d1e0c1e1dc651d5df9a37eb54b35ea1f7f51b9f23d8903c29ae1c5
+>>>>>>> origin/merging
 python_version=3
-patch_args="-Np1"
 
 # XXX Restrict archs until a proper <arch>-dotconfig is available in FILESDIR.
 archs="x86_64* i686* ppc* aarch64*"
@@ -173,7 +180,7 @@ do_install() {
 		mkdir -p ${hdrdest}/$(dirname $file)
 		install -Dm644 $file ${hdrdest}/${file}
 	done
-	for file in $(find arch/${subarch:-$arch} -name module.lds -o -name Kbuild.platforms -o -name Platform); do
+	for file in $(find arch/${subarch:-$arch} scripts -name module.lds -o -name Kbuild.platforms -o -name Platform); do
 		mkdir -p ${hdrdest}/$(dirname $file)
 		install -Dm644 $file ${hdrdest}/${file}
 	done
@@ -335,5 +342,6 @@ linux5.10-dbg_package() {
 	short_desc+=" - debugging symbols"
 	pkg_install() {
 		vmove usr/lib/debug
+		vmove "boot/System.map-${_kernver}"
 	}
 }

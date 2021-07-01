@@ -1,6 +1,10 @@
 # Template file for 'python3-setuptools'
 pkgname=python3-setuptools
+<<<<<<< HEAD
 version=53.0.0
+=======
+version=57.0.0
+>>>>>>> origin/merging
 revision=1
 wrksrc="setuptools-${version}"
 build_style=python3-module
@@ -14,7 +18,11 @@ license="MIT"
 homepage="https://github.com/pypa/setuptools"
 changelog="https://raw.githubusercontent.com/pypa/setuptools/master/CHANGES.rst"
 distfiles="${PYPI_SITE}/s/setuptools/setuptools-${version}.tar.gz"
+<<<<<<< HEAD
 checksum=1b18ef17d74ba97ac9c0e4b4265f123f07a8ae85d9cd093949fa056d3eeeead5
+=======
+checksum=401cbf33a7bf817d08014d51560fc003b895c4cdc1a5b521ad2969e928a07535
+>>>>>>> origin/merging
 provides="python3-distribute-${version}_1"
 replaces="python3-distribute>=0"
 
