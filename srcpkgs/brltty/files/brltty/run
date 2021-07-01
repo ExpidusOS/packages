@@ -1,3 +1,0 @@
-#!/bin/sh
-mkdir -p /var/run/brltty || exit 1
-exec brltty -n
