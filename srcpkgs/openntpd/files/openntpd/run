@@ -1,3 +1,0 @@
-#!/bin/sh
-[ -r conf ] && . ./conf
-exec openntpd -d ${OPTS:=-s} 2>&1

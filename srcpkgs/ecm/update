@@ -1,2 +1,0 @@
-site="http://ecm.gforge.inria.fr/"
-pattern="GMP-ECM \K[\d\.]*(?= has been released)"
