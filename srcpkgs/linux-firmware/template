@@ -1,10 +1,6 @@
 # Template file for 'linux-firmware'
 pkgname=linux-firmware
-<<<<<<< HEAD
-version=20210208
-=======
 version=20210511
->>>>>>> origin/merging
 revision=1
 depends="${pkgname}-amd>=${version}_${revision} ${pkgname}-network>=${version}_${revision}"
 short_desc="Binary firmware blobs for the Linux kernel"

@@ -1,10 +1,6 @@
 # Template file for 'postgresql13'
 pkgname=postgresql13
-<<<<<<< HEAD
-version=13.2
-=======
 version=13.3
->>>>>>> origin/merging
 revision=1
 wrksrc="postgresql-${version}"
 build_style=gnu-configure

@@ -1,10 +1,6 @@
 # Template file for 'apache'
 pkgname=apache
-<<<<<<< HEAD
-version=2.4.46
-=======
 version=2.4.48
->>>>>>> origin/merging
 revision=1
 wrksrc="httpd-${version}"
 build_style=gnu-configure

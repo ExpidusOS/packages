@@ -1,10 +1,6 @@
 # Template file for 'dracut'
 pkgname=dracut
-<<<<<<< HEAD
-version=051
-=======
 version=053
->>>>>>> origin/merging
 revision=1
 build_style=configure
 configure_args="--prefix=/usr --sysconfdir=/etc"

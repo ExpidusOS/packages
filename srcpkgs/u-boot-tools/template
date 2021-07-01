@@ -1,10 +1,6 @@
 # Template file for 'u-boot-tools'
 pkgname=u-boot-tools
-<<<<<<< HEAD
-version=2021.01
-=======
 version=2021.04
->>>>>>> origin/merging
 revision=1
 wrksrc="u-boot-${version}"
 build_style=gnu-makefile

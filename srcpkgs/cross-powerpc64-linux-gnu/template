@@ -13,13 +13,8 @@ configure_args="--enable-secureplt --disable-vtable-verify --with-abi=elfv2
 hostmakedepends="texinfo tar gcc-objc gcc-go flex perl python3"
 makedepends="isl15-devel libmpc-devel zlib-devel gmp-devel mpfr-devel"
 depends="${pkgname}-libc-${version}_${revision}"
-<<<<<<< HEAD
-short_desc="Void cross toolchain for ${_triplet}"
-maintainer="Jürgen Buchmüller <pullmoll@t-online.de>"
-=======
-short_desc="Void cross toolchain for ${pkgname/cross-}"
+short_desc="ExpidusOS cross toolchain for ${pkgname/cross-}"
 maintainer="Orphaned <orphan@voidlinux.org>"
->>>>>>> origin/merging
 license="GPL-2.0-or-later, GPL-3.0-or-later, LGPL-2.1-or-later"
 homepage="https://www.voidlinux.org/"
 distfiles="

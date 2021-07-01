@@ -1,10 +1,6 @@
 # Template file for 'glib'
 pkgname=glib
-<<<<<<< HEAD
-version=2.66.6
-=======
 version=2.68.2
->>>>>>> origin/merging
 revision=1
 build_style=meson
 # static version is necessary for qemu-user-static;
@@ -20,11 +16,7 @@ license="LGPL-2.1-or-later"
 homepage="https://wiki.gnome.org/Projects/GLib"
 changelog="https://gitlab.gnome.org/GNOME/glib/raw/master/NEWS"
 distfiles="${GNOME_SITE}/glib/${version%.*}/glib-${version}.tar.xz"
-<<<<<<< HEAD
-checksum=80fff9c63d2725834328071c42003c311f77f91caf2285195c587c62f5638329
-=======
 checksum=ecc7798a9cc034eabdfd7f246e6dd461cdbf1175fcc2e9867cc7da7b7309e0fb
->>>>>>> origin/merging
 
 build_options="gtk_doc"
 desc_option_gtk_doc="Build GTK API docs"

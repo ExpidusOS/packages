@@ -5,13 +5,7 @@ revision=10
 create_wrksrc=yes
 build_style=gnu-configure
 conf_files="/etc/tcsd.conf"
-<<<<<<< HEAD
-makedepends="libressl-devel"
-system_accounts=tss
-tss_homedir=/var/lib/tpm
-=======
 makedepends="openssl-devel"
->>>>>>> origin/merging
 short_desc="Trusted Computing Software Stack for the TPM"
 maintainer="Toyam Cox <Vaelatern@voidlinux.org>"
 license="BSD-3-Clause"

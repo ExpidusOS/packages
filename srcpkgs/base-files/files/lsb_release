@@ -4,8 +4,8 @@
 #
 version="1.0"
 distributor_id="ExpidusOS"
-description="ExpidusOS Willamette v0.1.0-prealpha"
-release="0.1.0-prealpha"
+description="ExpidusOS Willamette v0.1.0-prealpha Test Release 2"
+release="0.1.0-prealpha-tr2"
 codename="willamette"
 options=""
 short=0

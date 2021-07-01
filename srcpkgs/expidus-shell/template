@@ -1,0 +1,14 @@
+# Template file for 'expidus-shell'
+pkgname=expidus-shell
+version=0.1.0
+revision=1
+build_style=meson
+short_desc="The official desktop environment for ExpidusOS."
+maintainer="Tristan Ross <rosscomputerguy@protonmail.com>"
+license="GPL-3.0-or-later"
+homepage="https://expidusos.com"
+distfiles="https://github.com/ExpidusOS/shell/archive/refs/tags/0.1.0-prealpha-tr2.tar.gz"
+checksum="8c8bff8a6fcb5db178ad89984780f666d5a47ac7653102ea09963203c2938e13"
+depends="accountsservice gtk+3 libhandy1 glib pulseaudio NetworkManager upower libwnck xfconf xfwm4"
+makedepends="accountsservice-devel gtk+3-devel libhandy1-devel glib-devel pulseaudio-devel NetworkManager-devel upower-devel libwnck-devel xfconf-devel"
+makehostdepends="vala"

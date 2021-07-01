@@ -3,11 +3,7 @@
 # THIS PKG MUST BE SYNCHRONIZED WITH "srcpkgs/python3-tkinter".
 #
 pkgname=python3
-<<<<<<< HEAD
-version=3.9.2
-=======
 version=3.9.6
->>>>>>> origin/merging
 revision=1
 wrksrc="Python-${version}"
 pycompile_dirs="usr/lib/python${version%.*}"

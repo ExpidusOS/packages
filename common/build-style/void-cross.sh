@@ -184,12 +184,8 @@ _void_cross_build_kernel_headers() {
 		arm*) arch=arm ;;
 		riscv*) arch=riscv ;;
 		s390*) arch=s390 ;;
-<<<<<<< HEAD
 		sh4*) arch=sh ;;
-		*) msg_error "Unknown Linux arch for ${cross_triplet}\n" ;;
-=======
 		*) msg_error "Unknown Linux arch for ${tgt}\n" ;;
->>>>>>> origin/merging
 	esac
 
 	make ARCH=${arch} headers

@@ -1,10 +1,6 @@
 # Template file for 'xbps-triggers'
 pkgname=xbps-triggers
-<<<<<<< HEAD
-version=0.119
-=======
 version=0.121
->>>>>>> origin/merging
 revision=1
 bootstrap=yes
 short_desc="XBPS triggers for Void Linux"

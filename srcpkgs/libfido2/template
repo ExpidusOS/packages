@@ -1,19 +1,11 @@
 # Template file for 'libfido2'
 pkgname=libfido2
-<<<<<<< HEAD
-version=1.6.0
-=======
 version=1.7.0
->>>>>>> origin/merging
 revision=1
 build_style=cmake
 configure_args="-DUDEV_RULES_DIR=/usr/lib/udev/rules.d"
 hostmakedepends="pkg-config"
-<<<<<<< HEAD
-makedepends="libcbor-devel libressl-devel eudev-libudev-devel"
-=======
 makedepends="eudev-libudev-devel libcbor-devel openssl-devel zlib-devel"
->>>>>>> origin/merging
 short_desc="Library for FIDO 2.0, including communication with a device over USB"
 maintainer="Leah Neukirchen <leah@vuxu.org>"
 license="BSD-2-Clause"
