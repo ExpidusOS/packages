@@ -1,4 +1,0 @@
-#!/bin/sh
-mkdir -p /run/prosody
-chown prosody:prosody /run/prosody
-exec chpst -u prosody:prosody prosody

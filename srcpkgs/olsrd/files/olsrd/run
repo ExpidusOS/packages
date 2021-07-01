@@ -1,2 +1,0 @@
-#!/bin/sh
-exec olsrd -nofork -f /etc/olsrd.conf

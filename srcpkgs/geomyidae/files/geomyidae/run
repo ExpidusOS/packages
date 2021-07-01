@@ -1,7 +1,0 @@
-#!/bin/sh
-[ -r ./conf ] && . ./conf
-
-user=_geomyidae
-group=_geomyidae
-
-exec geomyidae -d -u $user -g $group $OPTS

@@ -1,5 +1,0 @@
-resolver: lts-16.31
-packages:
-- .
-extra-deps:
-- graphviz-2999.20.1.0
