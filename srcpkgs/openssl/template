@@ -19,7 +19,7 @@ homepage="https://www.openssl.org"
 distfiles="https://www.openssl.org/source/openssl-${version}.tar.gz"
 checksum=892a0875b9872acd04a9fde79b1f943075d5ea162415de3047c327df33fbaee5
 conf_files="/etc/ssl/openssl.cnf"
-replaces="libressl>=0"
+replaces="openssl>=0"
 
 build_options=asm
 
@@ -83,7 +83,7 @@ openssl-c_rehash_package() {
 
 openssl-devel_package() {
 	depends="${sourcepkg}>=${version}_${revision} libssl1.1>=${version}_${revision} libcrypto1.1>=${version}_${revision}"
-	replaces="libressl-devel>=0"
+	replaces="openssl-devel>=0"
 	short_desc+=" - development files"
 	pkg_install() {
 		vmove usr/share/man/man3

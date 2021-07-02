@@ -28,7 +28,7 @@ conf_files="
 	/etc/${pkgname}/mime.types"
 hostmakedepends="pkg-config perl apr-util-devel"
 makedepends="zlib-devel libuuid-devel pcre-devel nghttp2-devel
- libressl-devel db-devel gdbm-devel expat-devel libldap-devel apr-util-devel"
+ openssl-devel db-devel gdbm-devel expat-devel libldap-devel apr-util-devel"
 depends="apache-htpasswd"
 short_desc="Apache http server"
 maintainer="Orphaned <orphan@voidlinux.org>"

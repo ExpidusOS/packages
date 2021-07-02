@@ -14,7 +14,7 @@ hostmakedepends="perl pkg-config mdocml"
 makedepends="nghttp2-devel zlib-devel $(vopt_if gnutls 'gnutls-devel')
  $(vopt_if gssapi 'mit-krb5-devel') $(vopt_if ldap 'libldap-devel')
  $(vopt_if rtmp 'librtmp-devel') $(vopt_if ssh 'libssh2-devel')
- $(vopt_if ssl 'libressl-devel') $(vopt_if zstd 'libzstd-devel')"
+ $(vopt_if ssl 'openssl-devel') $(vopt_if zstd 'libzstd-devel')"
 depends="ca-certificates"
 # openssh isn't in checkdepends, because test 581 locks up
 checkdepends="python3 stunnel nghttp2"
