@@ -179,6 +179,15 @@ do_install() {
 	sed -ne '/The MIT License/,/ [*] SOFTWARE[.]$/p' \
 		nss/lib/freebl/verified/Hacl_Chacha20.c >hacl.LICENSE
 	vlicense hacl.LICENSE
+	vmkdir etc/ca-certificates/extracted
+	vmkdir etc/ssl/certs/edk2
+	vmkdir etc/ssl/certs/java
+	vmkdir etc/ssl
+	ln -sfr "${DESTDIR}/etc/ca-certificates/extracted/tls-ca-bundle.pem" "${DESTDIR}/etc/ssl/cert.pem"
+	ln -sfr "${DESTDIR}/etc/ca-certificates/extracted/tls-ca-bundle.pem" "${DESTDIR}/etc/ssl/certs/ca-certificates.crt"
+	install -d "${DESTDIR}"/{etc,usr/share}/ca-certificates/trust-source/{anchors,blocklist}
+	vbin "${FILESDIR}/update-ca-trust"
+	install -Dm644 nss/ca-bundle.trust.p11-kit "${DESTDIR}/usr/share/ca-certificates/trust-source/mozilla.trust.p11-kit"
 }
 
 nss-devel_package() {
@@ -195,14 +204,9 @@ nss-devel_package() {
 ca-certificates_package() {
 	short_desc="Common CA certificates for SSL/TLS"
 	pkg_install() {
-		vmkdir /usr/bin
-		vmkdir /etc/ca-certificates/extracted
-		vmkdir /etc/ssl/certs/edk2
-		vmkdir /etc/ssl/certs/java
-		ln -sr "${DESTDIR}/etc/ca-certificates/extracted/tls-ca-bundle.pem" "${DESTDIR}/etc/ssl/cert.pem"
-		ln -sr "${DESTDIR}/etc/ca-certificates/extracted/tls-ca-bundle.pem" "${DESTDIR}/etc/ssl/certs/ca-certificates.crt"
-		install -d "${DESTDIR}"/{etc,usr/share}/ca-certificates/trust-source/{anchors,blocklist}
-		install -Dt "${FILESDIR}/update-ca-trust" "${DESTDIR}/usr/bin/"
-		install -Dm644 nss/ca-bundle.trust.p11-kit "${DESTDIR}/usr/share/ca-certificates/trust-source/mozilla.trust.p11-kit"
+		vmove etc/ca-certificates
+		vmove etc/ssl
+		vmove usr/share/ca-certificates
+		vmove usr/bin/update-ca-trust
 	}
 }
