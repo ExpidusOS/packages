@@ -14,6 +14,7 @@ homepage="https://sqlite.org/"
 changelog="https://www.sqlite.org/releaselog/${version//./_}.html"
 distfiles="${homepage}/2021/sqlite-autoconf-${_amalgamationver}.tar.gz"
 checksum=bd90c3eb96bee996206b83be7065c9ce19aef38c3f4fb53073ada0d0b69bbce3
+bootstrap=y
 
 CFLAGS="-DSQLITE_ENABLE_DBSTAT_VTAB -DSQLITE_ENABLE_COLUMN_METADATA \
  -DSQLITE_ENABLE_UNLOCK_NOTIFY -DSQLITE_SECURE_DELETE -DSQLITE_ENABLE_JSON1 \

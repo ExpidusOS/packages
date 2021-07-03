@@ -10,6 +10,8 @@ license="GPL-3.0-or-later"
 homepage="http://www.gnu.org.ua/software/gdbm/"
 distfiles="${GNU_SITE}/${pkgname}/${pkgname}-${version}.tar.gz"
 checksum=37ed12214122b972e18a0d94995039e57748191939ef74115b1d41d8811364bc
+bootstrap=y
+depends="libreadline8"
 
 if [ "$CROSS_BUILD" ]; then
 	hostmakedepends="libtool automake gettext-devel"
