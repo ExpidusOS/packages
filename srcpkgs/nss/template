@@ -203,6 +203,8 @@ nss-devel_package() {
 
 ca-certificates_package() {
 	short_desc="Common CA certificates for SSL/TLS"
+	depends="bash coreutils findutils p11-kit"
+	version=20210603
 	pkg_install() {
 		vmove etc/ca-certificates
 		vmove etc/ssl
