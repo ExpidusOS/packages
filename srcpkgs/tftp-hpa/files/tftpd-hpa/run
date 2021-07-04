@@ -1,7 +1,0 @@
-#!/bin/sh
-
-[ -r conf ] && . ./conf
-
-: "${OPTS:= -s -v}"
-
-exec /usr/bin/in.tftpd -L $OPTS /var/lib/tftp

@@ -1,2 +1,0 @@
-#!/bin/sh
-exec chpst -u elog:elog /usr/bin/elogd -c /etc/elog/elogd.cfg
