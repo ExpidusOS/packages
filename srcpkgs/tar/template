@@ -11,6 +11,7 @@ license="GPL-3.0-or-later"
 homepage="https://www.gnu.org/software/tar/"
 distfiles="${GNU_SITE}/tar/${pkgname}-${version}.tar.xz"
 checksum=63bebd26879c5e1eea4352f0d03c991f966aeb3ddeb3c7445c902568d5411d28
+bootstrap=y
 
 pre_configure() {
 	# chroot-style=ethereal

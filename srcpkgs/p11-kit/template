@@ -4,9 +4,9 @@ version=0.23.22
 revision=3
 build_style=meson
 configure_args="-Dlibffi=enabled -Dsystemd=disabled -Dbash_completion=disabled
- -Dgtk_doc=true -Dman=true -Dnls=true -Dtrust_module=enabled
+ -Dgtk_doc=false -Dman=true -Dnls=true -Dtrust_module=enabled
  -Dtrust_paths=/etc/ssl/certs/ca-certificates.crt"
-hostmakedepends="pkg-config gettext gtk-doc libxslt libtasn1-tools"
+hostmakedepends="pkg-config gettext libtasn1-tools"
 makedepends="libtasn1-devel libffi-devel"
 short_desc="Provides a way to load and enumerate PKCS#11 modules"
 maintainer="Orphaned <orphan@voidlinux.org>"
@@ -15,6 +15,7 @@ homepage="https://github.com/p11-glue/p11-kit"
 distfiles="${homepage}/releases/download/${version}/p11-kit-${version}.tar.xz"
 checksum=8a8f40153dd5a3f8e7c03e641f8db400133fb2a6a9ab2aee1b6d0cb0495ec6b6
 conf_files="/etc/pkcs11/pkcs11.conf"
+bootstrap=yes
 
 if [ "$XBPS_CHECK_PKGS" ]; then
 	configure_args+=" -Dtest=true"

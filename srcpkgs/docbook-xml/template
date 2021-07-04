@@ -29,6 +29,7 @@ xml_entries="
  nextCatalog /usr/share/xml/docbook/4.4/catalog --
  nextCatalog /usr/share/xml/docbook/4.5/catalog --
  nextCatalog /usr/share/xml/docbook/4.2/catalog-4.1.2 --"
+bootstrap=y
 
 do_extract() {
 	:

@@ -11,6 +11,7 @@ homepage="https://www.gnu.org/software/libtasn1/"
 changelog="https://gitlab.com/gnutls/libtasn1/-/raw/master/NEWS"
 distfiles="${GNU_SITE}/$pkgname/$pkgname-$version.tar.gz"
 checksum=ece7551cea7922b8e10d7ebc70bc2248d1fdd73351646a2d6a8d68a9421c45a5
+bootstrap=y
 
 libtasn1-devel_package() {
 	depends="${sourcepkg}-${version}_${revision}"

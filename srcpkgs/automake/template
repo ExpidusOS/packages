@@ -15,6 +15,7 @@ license="GPL-2.0-or-later"
 homepage="https://www.gnu.org/software/automake"
 distfiles="${GNU_SITE}/$pkgname/$pkgname-$version.tar.xz"
 checksum=ccc459de3d710e066ab9e12d2f119bd164a08c9341ca24ba22c9adaa179eedd0
+bootstrap=y
 
 pre_check() {
 	# taken from http://www.linuxfromscratch.org/lfs/view/development/chapter06/automake.html

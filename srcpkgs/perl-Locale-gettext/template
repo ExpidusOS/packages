@@ -13,3 +13,4 @@ homepage="https://metacpan.org/release/gettext"
 license="Artistic-1.0-Perl, GPL-1.0-or-later"
 distfiles="${CPAN_SITE}/Locale/gettext-${version}.tar.gz"
 checksum=909d47954697e7c04218f972915b787bd1244d75e3bd01620bc167d5bbc49c15
+bootstrap=y
