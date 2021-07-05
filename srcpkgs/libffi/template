@@ -13,6 +13,10 @@ distfiles="ftp://sourceware.org/pub/$pkgname/$pkgname-$version.tar.gz"
 checksum=72fba7922703ddfa7a028d513ac15a85c8d54c8d67f55fa5a4802885dc652056
 bootstrap=y
 
+if [[ -z "${CHROOT_READY}" ]]; then
+	makedepends+=" chroot-libuuid-devel"
+fi
+
 post_install() {
 	vlicense LICENSE
 }
