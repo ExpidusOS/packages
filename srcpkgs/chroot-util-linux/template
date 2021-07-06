@@ -6,14 +6,14 @@ wrksrc="${pkgname/chroot-/}-${version}"
 bootstrap=yes
 build_style=gnu-configure
 configure_args="--without-ncurses --without-ncursesw --without-udev
- --without-systemd --enable-libuuid --disable-libblkid --disable-libmount
+ --without-systemd --disable-libuuid --disable-libblkid --disable-libmount
  --disable-mount --disable-losetup --disable-fsck --disable-partx --disable-uuidd
  --disable-mountpoint --disable-fallocate --disable-unshare --disable-nls
  --disable-wall --disable-chfn-chsh-password --disable-su --disable-sulogin
  --disable-login --disable-runuser --disable-setpriv --disable-libsmartcols
  --without-readline scanf_cv_alloc_modifier=as"
 makedepends="zlib-devel"
-depends="chroot-util-linux-libs"
+depends="util-linux-libs"
 short_desc="Miscellaneous linux utilities -- for xbps-src use"
 maintainer="Enno Boland <gottox@voidlinux.org>"
 license="GPL-2.0-or-later"

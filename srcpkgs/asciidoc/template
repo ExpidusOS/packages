@@ -14,6 +14,7 @@ homepage="https://asciidoc.org/"
 changelog="https://asciidoc.org/CHANGELOG.html"
 distfiles="https://github.com/asciidoc/asciidoc-py3/archive/${version}.tar.gz"
 checksum=b73248717403fe49ef239b2bdb95f2b603e0af15ddd8f5e420f27707010bf95f
+bootstrap=y
 
 pre_configure() {
 	autoreconf -fi

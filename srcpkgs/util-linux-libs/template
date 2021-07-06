@@ -5,8 +5,8 @@ version=2.36.2
 revision=1
 wrksrc="util-linux-$version"
 build_style=meta
-hostmakedepends="automake bison gettext gettext-devel libtool pkg-config xz"
-makedepends="libcap-ng-devel pam-devel readline-devel zlib-devel"
+hostmakedepends="automake bison gettext gettext-devel pkg-config xz"
+makedepends="readline-devel zlib-devel"
 depends="libfdisk-${version}_${revision} libblkid-${version}_${revision}
  libmount-${version}_${revision} libsmartcols-${version}_${revision}
  libuuid-${version}_${revision}"
@@ -14,8 +14,19 @@ short_desc="Miscellaneous linux utilities - meta libraries"
 maintainer="Enno Boland <gottox@voidlinux.org>"
 license="GPL-2.0-or-later"
 homepage="https://www.kernel.org/pub/linux/utils/util-linux/"
-distfiles="${KERNEL_SITE}/utils/util-linux/v${version%.${version#*.*.}}/util-linux-${version}.tar.xz"
-checksum=f7516ba9d8689343594356f0e5e1a5f0da34adfbc89023437735872bb5024c5f
+
+if [ -z "$CHROOT_READY" ]; then
+	distfiles="${KERNEL_SITE}/utils/util-linux/v${version%.*}/util-linux-${version}.tar.xz"
+	checksum="f7516ba9d8689343594356f0e5e1a5f0da34adfbc89023437735872bb5024c5f"
+	CFLAGS+=" -I${XBPS_MASTERDIR}/usr/include"
+	LDFLAGS+=" -L${XBPS_MASTERDIR}/usr/lib"
+	bootstrap=y
+else
+	distfiles="${KERNEL_SITE}/utils/util-linux/v${version%.${version#*.*.}}/util-linux-${version}.tar.xz"
+	checksum=f7516ba9d8689343594356f0e5e1a5f0da34adfbc89023437735872bb5024c5f
+	hostmakedepends+=" libtool"
+	makedepends+=" pam-devel libcap-ng-devel"
+fi
 
 pre_configure() {
 	local _cfgdir="$XBPS_COMMONDIR/environment/configure"

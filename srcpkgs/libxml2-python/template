@@ -14,6 +14,12 @@ license="MIT"
 homepage="http://www.xmlsoft.org/"
 distfiles="http://xmlsoft.org/sources/libxml2-${version}.tar.gz"
 checksum=aafee193ffb8fe0c82d4afef6ef91972cbaf5feea100edc2f262750611b4be1f
+bootstrap=y
+
+if [ -z "$CHROOT_READY" ]; then
+	CFLAGS+=" -I${XBPS_MASTERDIR}/usr/include"
+	LDFLAGS+=" -L${XBPS_MASTERDIR}/usr/lib"
+fi
 
 post_patch() {
 	if [ "${CROSS_BUILD}" ]; then

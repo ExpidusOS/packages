@@ -39,6 +39,5 @@ p11-kit-devel_package() {
 		vmove usr/include
 		vmove "usr/lib/*.so"
 		vmove usr/lib/pkgconfig
-		vmove usr/share/gtk-doc
 	}
 }
