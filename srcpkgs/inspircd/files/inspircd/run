@@ -1,3 +1,0 @@
-#!/bin/sh
-exec chpst -u inspircd inspircd \
-    --nofork --config /etc/inspircd/inspircd.conf
