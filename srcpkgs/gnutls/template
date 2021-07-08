@@ -12,9 +12,10 @@ hostmakedepends="gettext libtool pkg-config which"
 #hostmakedepends+=" gettext-devel-tools automake"
 # dependencies listed in pkg-config files
 _develdepends="unbound-devel trousers-devel libunistring-devel nettle-devel
- libtasn1-devel libidn2-devel p11-kit-devel"
+ libtasn1-devel libidn2-devel p11-kit-devel unbound-devel"
 makedepends="zlib-devel lzo-devel readline-devel libgpg-error-devel
  libgcrypt-devel ${_develdepends}"
+depends="libunbound"
 checkdepends="iproute2"
 short_desc="GNU Transport Layer Security library"
 maintainer="Orphaned <orphan@voidlinux.org>"

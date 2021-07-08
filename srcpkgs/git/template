@@ -2,8 +2,8 @@
 pkgname=git
 version=2.32.0
 revision=1
-hostmakedepends="asciidoc gettext perl pkg-config tk xmlto"
-makedepends="libglib-devel libcurl-devel libsecret-devel pcre2-devel tk-devel"
+hostmakedepends="asciidoc gettext perl pkg-config xmlto"
+makedepends="libglib-devel libcurl-devel libsecret-devel pcre2-devel"
 # Required by https://
 depends="ca-certificates perl-Authen-SASL perl-MIME-tools perl-Net-SMTP-SSL"
 checkdepends="tar cvs cvsps2 perl-DBD-SQLite subversion subversion-perl

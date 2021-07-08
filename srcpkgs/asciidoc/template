@@ -2,7 +2,7 @@
 pkgname=asciidoc
 version=9.0.5
 revision=1
-wrksrc=${pkgname}-py3-${version}
+wrksrc=${pkgname}-py-${version}
 build_style=gnu-configure
 hostmakedepends="automake docbook-xsl libxslt python3"
 depends="docbook-xsl libxslt python3"
@@ -13,7 +13,7 @@ license="GPL-2.0-or-later"
 homepage="https://asciidoc.org/"
 changelog="https://asciidoc.org/CHANGELOG.html"
 distfiles="https://github.com/asciidoc/asciidoc-py3/archive/${version}.tar.gz"
-checksum=b73248717403fe49ef239b2bdb95f2b603e0af15ddd8f5e420f27707010bf95f
+checksum=edc8328c3682a8568172656f6fc309b189f65219a49517966c7ea144cb25f8b2
 bootstrap=y
 
 pre_configure() {

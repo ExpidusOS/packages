@@ -5,7 +5,7 @@ _nsprver=4.30
 pkgname=nss
 version=3.67
 revision=1
-hostmakedepends="perl"
+hostmakedepends="perl python3"
 makedepends="nspr-devel sqlite-devel zlib-devel"
 bootstrap=y
 depends="nspr>=${_nsprver}"
@@ -179,15 +179,6 @@ do_install() {
 	sed -ne '/The MIT License/,/ [*] SOFTWARE[.]$/p' \
 		nss/lib/freebl/verified/Hacl_Chacha20.c >hacl.LICENSE
 	vlicense hacl.LICENSE
-	vmkdir etc/ca-certificates/extracted
-	vmkdir etc/ssl/certs/edk2
-	vmkdir etc/ssl/certs/java
-	vmkdir etc/ssl
-	ln -sfr "${DESTDIR}/etc/ca-certificates/extracted/tls-ca-bundle.pem" "${DESTDIR}/etc/ssl/cert.pem"
-	ln -sfr "${DESTDIR}/etc/ca-certificates/extracted/tls-ca-bundle.pem" "${DESTDIR}/etc/ssl/certs/ca-certificates.crt"
-	install -d "${DESTDIR}"/{etc,usr/share}/ca-certificates/trust-source/{anchors,blocklist}
-	vbin "${FILESDIR}/update-ca-trust"
-	install -Dm644 nss/ca-bundle.trust.p11-kit "${DESTDIR}/usr/share/ca-certificates/trust-source/mozilla.trust.p11-kit"
 }
 
 nss-devel_package() {
@@ -206,9 +197,11 @@ ca-certificates_package() {
 	depends="coreutils findutils p11-kit"
 	version=20210603
 	pkg_install() {
-		vmove etc/ca-certificates
-		vmove etc/ssl
-		vmove usr/share/ca-certificates
-		vmove usr/bin/update-ca-trust
+		vmkdir etc/ssl/certs
+		ln -sfr "${PKGDESTDIR}/etc/ca-certificates/extracted/tls-ca-bundle.pem" "${PKGDESTDIR}/etc/ssl/cert.pem"
+		ln -sfr "${PKGDESTDIR}/etc/ca-certificates/extracted/tls-ca-bundle.pem" "${PKGDESTDIR}/etc/ssl/certs/ca-certificates.crt"
+		install -d "${DESTDIR}"/{etc,usr/share}/ca-certificates/trust-source/{anchors,blocklist}
+		vbin "${FILESDIR}/update-ca-trust"
+		install -Dm644 nss/ca-bundle.trust.p11-kit "${PKGDESTDIR}/usr/share/ca-certificates/trust-source/mozilla.trust.p11-kit"
 	}
 }

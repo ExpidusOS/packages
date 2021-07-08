@@ -14,12 +14,6 @@ bootstrap=y
 
 subpackages="libcap-ng-devel libcap-ng-progs"
 
-if [ -z "$CROSS_BUILD" ]; then
-	subpackages+=" libcap-ng-python libcap-ng-python3"
-	hostmakedepends="python3-devel swig"
-	configure_args+=" --without-python --with-python3"
-fi
-
 libcap-ng-devel_package() {
 	depends="${sourcepkg}>=${version}_${revision}"
 	short_desc+=" - development files"
@@ -38,17 +32,4 @@ libcap-ng-progs_package() {
 		vmove usr/bin
 		vmove usr/share
 	}
-}
-libcap-ng-python3_package() {
-	lib32disabled=yes
-	short_desc+=" - Python3 bindings"
-	depends="python3"
-	pkg_install() {
-		vmove ${py3_sitelib}
-	}
-}
-libcap-ng-python_package() {
-	build_style=meta
-	short_desc+=" - transitional dummy pkg"
-	depends="libcap-ng-python3-${version}_${revision}"
 }

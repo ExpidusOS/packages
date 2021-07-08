@@ -1,5 +1,8 @@
 case "$ACTION" in
 post)
+	mkdir -p /etc/ca-certificates/extracted
+	mkdir -p /etc/ssl/certs/edk2
+	mkdir -p /etc/ssl/certs/java
 	update-ca-trust
 	;;
 esac

@@ -35,6 +35,7 @@ pre_configure() {
 	mkdir -p build
 	cd build
 	../bootstrap --no-system-libs \
+		--no-qt-gui --sphinx-html \
 		${XBPS_MAKEJOBS:+--parallel=$XBPS_MAKEJOBS}
 	# Make sure build directory is clean
 	for f in *; do
