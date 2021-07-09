@@ -14,14 +14,14 @@ configure_args="--disable-schemas-compile
  $(vopt_enable wayland wayland-backend) $(vopt_enable x11 x11-backend)
  $(vopt_if cloudproviders '--enable-cloudproviders')"
 conf_files="/etc/gtk-3.0/im-multipress.conf"
-hostmakedepends="gettext-devel glib-devel gtk-doc gtk-update-icon-cache perl
+hostmakedepends="gettext-devel glib-devel gtk-doc perl
  pkg-config $(vopt_if wayland 'wayland-devel wayland-protocols')"
 makedepends="at-spi2-atk-devel gdk-pixbuf-devel libepoxy-devel pango-devel
  iso-codes $(vopt_if colord 'colord-devel') $(vopt_if cups 'cups-devel')
  $(vopt_if wayland 'libxkbcommon-devel wayland-devel wayland-protocols MesaLib-devel')
  $(vopt_if x11 'libXcursor-devel libXdamage-devel libXext-devel libXinerama-devel libXi-devel libXrandr-devel libXcomposite-devel')
  $(vopt_if cloudproviders 'libcloudproviders-devel')"
-depends="gtk-update-icon-cache adwaita-icon-theme papirus-icon-theme tokyo-theme
+depends="gtk-update-icon-cache papirus-icon-theme tokyo-theme
  librsvg shared-mime-info $(vopt_if x11 'dbus-x11')"
 checkdepends="$depends xvfb-run dbus"
 short_desc="GTK+ toolkit (v3)"
@@ -45,8 +45,6 @@ do_check() {
 }
 
 post_install() {
-	rm -f ${DESTDIR}/usr/bin/gtk-update-icon-cache
-	rm -f ${DESTDIR}/usr/share/man/man1/gtk-update-icon-cache.1
 	install -Dm644 /dev/stdin "$DESTDIR/usr/share/gtk-3.0/settings.ini" <<EOF
 [Settings]
 gtk-icon-theme-name = Papirus-Dark
@@ -83,5 +81,13 @@ gtk+3-demo_package() {
 		vmove usr/share/applications/gtk3-widget-factory.desktop
 		vmove usr/share/applications/gtk3-demo.desktop
 		vmove usr/share/icons
+	}
+}
+
+gtk-update-icon-cache_package() {
+	short_desc+=" - The GTK+ update icon cache tool"
+	pkg_install() {
+		vmove usr/bin/gtk-update-icon-cache
+		vmove usr/share/man/man1/gtk-update-icon-cache.1
 	}
 }

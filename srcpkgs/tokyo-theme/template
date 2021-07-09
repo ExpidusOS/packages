@@ -1,0 +1,11 @@
+# Template file for 'tokyo-theme'
+pkgname=tokyo-theme
+version=0.1.0
+revision=1
+build_style=meson
+hostmakedepends="sassc"
+short_desc="A modern light and dark theme with Tokyo inspired colors"
+maintainer="Tristan Ross <rosscomputerguy@protonmail.com>"
+homepage="https://github.com/ExpidusOS/tokyo-theme"
+distfiles="https://github.com/ExpidusOS/tokyo-theme/archive/refs/tags/0.1.0-prealpha-tr2.tar.gz"
+checksum="a2cd9e554d15acb91efb51c4cac615e379d8ccba67c7ba8d2df21e3ebf2198a9"

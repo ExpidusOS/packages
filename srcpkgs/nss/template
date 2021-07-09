@@ -5,7 +5,7 @@ _nsprver=4.30
 pkgname=nss
 version=3.67
 revision=1
-hostmakedepends="perl python3"
+hostmakedepends="perl python3 openssl"
 makedepends="nspr-devel sqlite-devel zlib-devel"
 bootstrap=y
 depends="nspr>=${_nsprver}"
